@@ -1,1117 +1,984 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ExcellenceLinks | Shafqat Sarwar — Agentic AI & Automation</title>
-  <meta name="description" content="Shafqat Sarwar — Founder & CEO of ExcellenceLinks. Agentic AI Developer building autonomous AI employees, multi-agent systems, and workflow automation.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg:        #07090f;
-      --bg-card:   #0e1320;
-      --bg-card2:  #111827;
-      --border:    rgba(255,255,255,0.07);
-      --border-h:  rgba(212,175,55,0.3);
-      --gold:      #D4AF37;
-      --gold2:     #f0cc55;
-      --cyan:      #22d3ee;
-      --text:      #e8eaf0;
-      --muted:     #8b93a7;
-      --green:     #22c55e;
-      --blue:      #3b82f6;
-      --radius:    14px;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
-
-    /* ── NAVIGATION ── */
-    header {
-      position: sticky;
-      top: 0; z-index: 100;
-      background: rgba(7, 9, 15, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 5%;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      width: 36px; height: 36px;
-      border-radius: 50%;
-      border: 1.5px solid var(--gold);
-      object-fit: cover;
-    }
-
-    .nav-logo-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.2px;
-    }
-
-    .nav-logo-name span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .nav-hire {
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      color: #000 !important;
-      padding: 7px 18px;
-      border-radius: 50px;
-      font-weight: 700 !important;
-    }
-
-    /* ── BANNER ── */
-    .banner {
-      width: 100%;
-      max-height: 290px;
-      overflow: hidden;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-
-    .banner img {
-      width: 100%;
-      object-fit: cover;
-      max-height: 290px;
-      display: block;
-    }
-
-    .banner::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 60px;
-      background: linear-gradient(to bottom, transparent, var(--bg));
-    }
-
-    /* ── LAYOUT ── */
-    .wrap {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    section { padding: 72px 0; }
-
-    /* ── STAT ROW ── */
-    .stat-row {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: #090c15;
-      padding: 36px 0;
-    }
-
-    .stat-row .wrap {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      gap: 20px;
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: 'Outfit', sans-serif;
-      font-size: 40px;
-      font-weight: 800;
-      color: var(--gold);
-      line-height: 1;
-    }
-
-    .stat-lbl {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--muted);
-      margin-top: 5px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* ── SECTION HEADING ── */
-    .sec-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(212,175,55,0.08);
-      border: 1px solid rgba(212,175,55,0.18);
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 50px;
-      margin-bottom: 14px;
-    }
-
-    .sec-tag::before {
-      content: '';
-      width: 5px; height: 5px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    .sec-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.3px;
-      margin-bottom: 36px;
-    }
-
-    .sec-title span { color: var(--gold); }
-
-    /* ── CARD ── */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
-    }
-
-    .card:hover {
-      border-color: var(--border-h);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.35);
-      transform: translateY(-3px);
-    }
-
-    /* ── PROJECTS ── */
-    .proj-grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 18px;
-    }
-
-    .proj-card { padding: 26px; }
-
-    .proj-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 14px;
-    }
-
-    .proj-icon {
-      width: 42px; height: 42px;
-      border-radius: 11px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 19px;
-    }
-
-    .ic-gold   { background: rgba(212,175,55,0.1); }
-    .ic-cyan   { background: rgba(34,211,238,0.1); }
-    .ic-purple { background: rgba(139,92,246,0.1); }
-    .ic-blue   { background: rgba(59,130,246,0.1); }
-    .ic-green  { background: rgba(34,197,94,0.1);  }
-    .ic-pink   { background: rgba(236,72,153,0.1); }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      padding: 4px 10px;
-      border-radius: 50px;
-    }
-
-    .badge-live  { background:rgba(59,130,246,0.1); color:#60a5fa; border:1px solid rgba(59,130,246,0.2); }
-    .badge-done  { background:rgba(34,197,94,0.1);  color:#22c55e; border:1px solid rgba(34,197,94,0.2);  }
-    .badge-open  { background:rgba(139,92,246,0.1); color:#a78bfa; border:1px solid rgba(139,92,246,0.2); }
-
-    .badge-live::before, .badge-done::before {
-      content:''; width:5px; height:5px;
-      border-radius:50%; background:currentColor;
-      animation: blink-dot 1.5s infinite;
-    }
-
-    @keyframes blink-dot {
-      0%,100%{opacity:1} 50%{opacity:0.3}
-    }
-
-    .proj-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 16px; font-weight: 700;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
-
-    .proj-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-
-    .proj-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--gold);
-      text-decoration: none;
-      transition: gap 0.2s;
-    }
-
-    .proj-link::after { content:'→'; }
-    .proj-link:hover { gap: 9px; }
-
-    /* ── SKILLS ── */
-    .skills-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
-
-    .skill-bars { display: flex; flex-direction: column; gap: 16px; }
-
-    .skill-row {}
-
-    .skill-row-hd {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 7px;
-    }
-
-    .skill-track {
-      height: 5px;
-      background: rgba(255,255,255,0.05);
-      border-radius: 50px;
-      overflow: hidden;
-    }
-
-    .skill-fill {
-      height: 100%;
-      border-radius: 50px;
-      background: linear-gradient(90deg, var(--gold), var(--gold2));
-      width: 0;
-      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
-    }
-
-    .skill-fill.c { background: linear-gradient(90deg, var(--cyan), #38bdf8); }
-    .skill-fill.p { background: linear-gradient(90deg, #8b5cf6, #a78bfa); }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .tag {
-      background: var(--bg-card2);
-      border: 1px solid var(--border);
-      color: #b0b8c8;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 7px 13px;
-      border-radius: 8px;
-      transition: all 0.22s;
-      cursor: default;
-    }
-
-    .tag:hover {
-      background: rgba(212,175,55,0.07);
-      border-color: rgba(212,175,55,0.28);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    /* ── EXPERIENCE ── */
-    .exp-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .exp-card { padding: 28px; }
-
-    .exp-hd {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      margin-bottom: 6px;
-    }
-
-    .exp-dot {
-      width: 11px; height: 11px;
-      border-radius: 50%;
-      background: var(--gold);
-      flex-shrink: 0;
-      margin-top: 6px;
-      box-shadow: 0 0 8px rgba(212,175,55,0.45);
-    }
-
-    .exp-role {
-      font-family: 'Outfit', sans-serif;
-      font-size: 17px; font-weight: 700;
-      color: var(--text);
-    }
-
-    .exp-company { font-size: 13px; color: var(--gold); font-weight: 600; }
-
-    .exp-date {
-      display: inline-block;
-      font-size: 11px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      padding: 3px 10px;
-      border-radius: 50px;
-      margin: 10px 0 14px 25px;
-    }
-
-    .exp-list { padding-left: 25px; }
-
-    .exp-list li {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 7px;
-      padding-left: 12px;
-      position: relative;
-    }
-
-    .exp-list li::before {
-      content: '▸';
-      position: absolute; left: 0;
-      color: var(--gold); opacity: 0.7;
-    }
-
-    /* ── EDUCATION / CERTS ── */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .edu-card { padding: 28px; }
-
-    .edu-card-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 15px; font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 20px;
-    }
-
-    .degree-item { margin-bottom: 16px; }
-
-    .degree-item + .degree-item {
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-    }
-
-    .deg-name {
-      font-size: 14px; font-weight: 700;
-      color: var(--text);
-      margin-bottom: 3px;
-    }
-
-    .deg-school { font-size: 12px; color: var(--gold); font-weight: 600; }
-    .deg-year   { font-size: 11px; color: var(--muted); margin-top: 2px; }
-
-    .cert-list { display: flex; flex-direction: column; gap: 11px; }
-
-    .cert-row {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      font-size: 13px;
-      color: #c0c8d8;
-    }
-
-    .cert-ico {
-      width: 28px; height: 28px;
-      background: rgba(212,175,55,0.08);
-      border: 1px solid rgba(212,175,55,0.18);
-      border-radius: 8px;
-      display: flex; align-items: center;
-      justify-content: center;
-      font-size: 13px; flex-shrink: 0;
-    }
-
-    /* ── CEO SECTION ── */
-    .ceo-section {
-      background: #090c15;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 80px 0;
-    }
-
-    .ceo-layout {
-      display: grid;
-      grid-template-columns: 300px 1fr;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .ceo-img-box {
-      position: relative;
-    }
-
-    .ceo-img-box img {
-      width: 100%;
-      border-radius: 18px;
-      border: 2px solid rgba(212,175,55,0.3);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.4);
-      display: block;
-    }
-
-    .ceo-floater {
-      position: absolute;
-      bottom: -14px; right: -14px;
-      background: linear-gradient(135deg, var(--gold), var(--gold2));
-      color: #000;
-      font-size: 11px; font-weight: 800;
-      padding: 8px 14px;
-      border-radius: 10px;
-      letter-spacing: 0.3px;
-      box-shadow: 0 6px 20px rgba(212,175,55,0.4);
-    }
-
-    .ceo-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(212,175,55,0.08);
-      border: 1px solid rgba(212,175,55,0.18);
-      color: var(--gold);
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 1.4px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 50px;
-      margin-bottom: 14px;
-    }
-
-    .ceo-name {
-      font-family: 'Outfit', sans-serif;
-      font-size: 38px; font-weight: 800;
-      letter-spacing: -0.8px; line-height: 1.1;
-      margin-bottom: 6px;
-    }
-
-    .ceo-name span { color: var(--gold); }
-
-    .ceo-sub {
-      font-size: 14px; color: var(--muted);
-      font-weight: 500; margin-bottom: 24px;
-    }
-
-    .ceo-quote {
-      font-size: 15px; font-style: italic;
-      color: #c0c8d8;
-      border-left: 3px solid var(--gold);
-      padding-left: 18px;
-      margin-bottom: 18px;
-      line-height: 1.78;
-    }
-
-    .ceo-bio {
-      font-size: 13px; color: var(--muted);
-      margin-bottom: 28px;
-      line-height: 1.8;
-    }
-
-    /* ── CONNECT BUTTONS ── */
-    .connect-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .soc-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 18px;
-      border-radius: 50px;
-      font-size: 13px; font-weight: 600;
-      text-decoration: none;
-      border: 1px solid var(--border);
-      background: var(--bg-card2);
-      color: var(--text);
-      transition: all 0.22s;
-    }
-
-    .soc-btn:hover {
-      background: rgba(212,175,55,0.08);
-      border-color: rgba(212,175,55,0.32);
-      color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    /* WhatsApp connect dropdown */
-    .drop-wrap {
-      position: relative;
-      display: inline-block;
-    }
-
-    .wa-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 10px 22px;
-      border-radius: 50px;
-      font-size: 13px; font-weight: 700;
-      text-decoration: none;
-      background: linear-gradient(135deg, #25D366, #128C7E);
-      color: #fff;
-      cursor: pointer;
-      border: none;
-      box-shadow: 0 3px 14px rgba(37,211,102,0.3);
-      transition: all 0.22s;
-    }
-
-    .wa-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37,211,102,0.45);
-    }
-
-    .drop-menu {
-      display: none;
-      position: absolute;
-      bottom: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0e1320;
-      border: 1px solid rgba(37,211,102,0.2);
-      border-radius: 12px;
-      padding: 8px;
-      min-width: 230px;
-      z-index: 200;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.5);
-    }
-
-    .drop-wrap:hover .drop-menu { display: flex; flex-direction: column; gap: 4px; }
-
-    .drop-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 12px;
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--text);
-      font-size: 13px; font-weight: 600;
-      transition: background 0.18s;
-    }
-
-    .drop-item:hover { background: rgba(37,211,102,0.08); color: #25D366; }
-
-    .drop-item-sub {
-      font-size: 10px;
-      color: var(--muted);
-      font-weight: 400;
-      display: block;
-      margin-bottom: 1px;
-    }
-
-    /* ── CONTACT STRIP ── */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(5,1fr);
-      gap: 16px;
-    }
-
-    .contact-card {
-      padding: 22px 18px;
-      text-align: center;
-    }
-
-    .contact-ico  { font-size: 24px; display: block; margin-bottom: 10px; }
-    .contact-lbl  { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: var(--gold); margin-bottom: 6px; }
-    .contact-val  { font-size: 12px; color: var(--text); font-weight: 500; word-break: break-all; }
-    .contact-val a { color: var(--gold); text-decoration: none; font-weight: 600; }
-    .contact-val a:hover { text-decoration: underline; }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #040609;
-      border-top: 1px solid var(--border);
-      padding: 32px 24px;
-      text-align: center;
-    }
-
-    .ft-logo {
-      font-family: 'Outfit', sans-serif;
-      font-size: 20px; font-weight: 800;
-      color: var(--text);
-      margin-bottom: 6px;
-    }
-
-    .ft-logo span { color: var(--gold); }
-
-    .ft-sub  { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
-    .ft-copy { font-size: 11px; color: rgba(139,147,167,0.5); }
-
-    /* ── SCROLL REVEAL ── */
-    .rv {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .rv.in { opacity: 1; transform: translateY(0); }
-    .rv.d1 { transition-delay: 0.1s; }
-    .rv.d2 { transition-delay: 0.2s; }
-    .rv.d3 { transition-delay: 0.3s; }
-    .rv.d4 { transition-delay: 0.4s; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      .proj-grid   { grid-template-columns: 1fr 1fr; }
-      .ceo-layout  { grid-template-columns: 1fr; }
-      .ceo-img-box { max-width: 280px; }
-      .contact-grid { grid-template-columns: repeat(3,1fr); }
-    }
-
-    @media (max-width: 768px) {
-      .proj-grid, .skills-wrap, .exp-grid, .edu-grid { grid-template-columns: 1fr; }
-      .stat-row .wrap { grid-template-columns: repeat(2,1fr); }
-      .contact-grid { grid-template-columns: repeat(2,1fr); }
-      .nav-links li:not(:last-child) { display: none; }
-      .ceo-name { font-size: 30px; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ExcellenceLinks — Shafqat Sarwar | Agentic AI for SMEs</title>
+<meta name="description" content="ExcellenceLinks — Agentic AI Development & Automation. Founder Shafqat Sarwar builds AI Employees, multi-agent systems, and workflow automation for SMEs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07090f;
+  --bg2: #0a0e1a;
+  --bg-card: #0e1424;
+  --bg-card2: #111b2e;
+  --border: rgba(255,255,255,0.06);
+  --border-h: rgba(212,175,55,0.25);
+  --gold: #D4AF37;
+  --gold2: #f0cc55;
+  --gold3: #b8952e;
+  --cyan: #22d3ee;
+  --cyan2: #06b6d4;
+  --purple: #8b5cf6;
+  --purple2: #a78bfa;
+  --pink: #ec4899;
+  --green: #22c55e;
+  --blue: #3b82f6;
+  --text: #e8eaf0;
+  --muted: #8892a8;
+  --radius: 14px;
+  --radius-sm: 8px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gold3);border-radius:50px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+section{padding:80px 0}
+
+/* ─── NAV ─── */
+header{
+  position:fixed;top:0;left:0;right:0;z-index:1000;
+  background:rgba(7,9,15,0.85);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  padding:0 5%;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.nav-logo img{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--gold);object-fit:cover}
+.nav-logo-name{font-family:'Outfit',sans-serif;font-size:19px;font-weight:800;color:var(--text);letter-spacing:-0.2px}
+.nav-logo-name span{color:var(--gold)}
+.nav-links{display:flex;align-items:center;gap:24px;list-style:none}
+.nav-links a{
+  font-size:12.5px;font-weight:600;color:var(--muted);text-decoration:none;
+  transition:color 0.2s;position:relative;
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+  background:linear-gradient(90deg,var(--gold),var(--cyan));transition:width 0.3s;border-radius:2px;
+}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-hire{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000!important;padding:7px 20px;border-radius:50px;font-weight:700!important;
+  box-shadow:0 4px 16px rgba(212,175,55,0.25);
+}
+.nav-hire::after{display:none!important}
+.nav-hire:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(212,175,55,0.35)}
+
+/* ─── TOP BANNER ─── */
+.top-banner{
+  width:100%;height:auto;display:block;
+  margin-top:64px;position:relative;z-index:1;
+}
+.top-banner img{width:100%;height:auto;display:block}
+
+/* ─── HERO COMPANY ─── */
+.hero{
+  min-height:100vh;display:flex;align-items:center;position:relative;
+  overflow:hidden;padding-top:64px;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:linear-gradient(135deg,#07090f 0%,#0a0e1a 40%,#0e1424 70%,#07090f 100%);
+}
+.hero-bg img{
+  width:100%;height:100%;object-fit:cover;opacity:0.08;
+  position:absolute;inset:0;
+}
+.hero-bg::after{
+  content:'';position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 50%, rgba(212,175,55,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 30%, rgba(34,211,238,0.05) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 400px at 60% 80%, rgba(139,92,246,0.04) 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;width:100%}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(212,175,55,0.08);border:1px solid rgba(212,175,55,0.15);
+  color:var(--gold);font-size:10px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;padding:5px 14px;border-radius:50px;margin-bottom:16px;
+}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse-dot 2s infinite}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+.hero-company{
+  font-family:'Outfit',sans-serif;font-size:clamp(14px,1.5vw,18px);
+  font-weight:700;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;
+}
+.hero-title{
+  font-family:'Outfit',sans-serif;
+  font-size:clamp(32px,4.5vw,52px);font-weight:900;
+  line-height:1.08;letter-spacing:-1px;margin-bottom:10px;
+}
+.hero-title .grad-text{
+  background:linear-gradient(135deg,var(--gold) 0%,var(--gold2) 40%,var(--cyan) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hero-sub{
+  font-size:clamp(14px,1.3vw,17px);color:var(--muted);font-weight:500;
+  margin-bottom:24px;line-height:1.7;max-width:520px;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn-primary{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:12px 28px;border-radius:50px;font-size:13px;font-weight:700;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;text-decoration:none;
+  box-shadow:0 4px 20px rgba(212,175,55,0.3);
+  transition:all 0.25s;border:none;cursor:pointer;
+}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(212,175,55,0.4)}
+.btn-secondary{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 26px;border-radius:50px;font-size:13px;font-weight:600;
+  background:rgba(255,255,255,0.04);border:1px solid var(--border);
+  color:var(--text);text-decoration:none;
+  transition:all 0.25s;cursor:pointer;
+}
+.btn-secondary:hover{background:rgba(212,175,55,0.06);border-color:rgba(212,175,55,0.2);color:var(--gold);transform:translateY(-2px)}
+.hero-strip{
+  display:flex;flex-wrap:wrap;gap:24px;margin-top:32px;
+  padding-top:24px;border-top:1px solid var(--border);
+}
+.hero-stat .hs-num{font-family:'Outfit',sans-serif;font-size:26px;font-weight:800;color:var(--gold);line-height:1}
+.hero-stat .hs-lbl{font-size:11px;color:var(--muted);font-weight:500;margin-top:3px}
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-img-wrap{
+  position:relative;width:280px;height:280px;border-radius:50%;
+  background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(34,211,238,0.1));
+  padding:4px;box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+.hero-img-wrap img{
+  width:100%;height:100%;border-radius:50%;object-fit:cover;
+  border:2px solid rgba(212,175,55,0.2);
+}
+.hero-img-wrap .float-badge{
+  position:absolute;bottom:10px;right:-10px;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;font-size:10px;font-weight:800;
+  padding:8px 16px;border-radius:10px;letter-spacing:0.3px;
+  box-shadow:0 6px 20px rgba(212,175,55,0.35);
+}
+.orbits{
+  position:absolute;inset:-60px;border-radius:50%;
+  border:1px solid rgba(212,175,55,0.06);
+  animation:spin 30s linear infinite;
+}
+.orbits:nth-child(2){inset:-100px;animation-duration:40s;border-color:rgba(34,211,238,0.04)}
+.orbits:nth-child(3){inset:-140px;animation-duration:50s;border-color:rgba(139,92,246,0.03)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ─── COMPANY SECTION ─── */
+.company-section{
+  background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+}
+.company-grid{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:start}
+.company-img-box{position:relative}
+.company-img-box img{width:100%;border-radius:18px;border:2px solid rgba(212,175,55,0.2);box-shadow:0 12px 40px rgba(0,0,0,0.4);display:block}
+.company-mission{
+  font-size:15px;font-style:italic;color:var(--muted);
+  border-left:3px solid var(--gold);padding-left:20px;margin:20px 0;line-height:1.8;
+}
+.company-text{font-size:13.5px;color:var(--muted);line-height:1.85;margin-bottom:20px}
+.company-stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;
+}
+.company-stat{
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:16px;text-align:center;
+}
+.company-stat .cs-num{font-family:'Outfit',sans-serif;font-size:24px;font-weight:800;color:var(--gold);line-height:1}
+.company-stat .cs-lbl{font-size:10px;color:var(--muted);font-weight:500;margin-top:4px;text-transform:uppercase;letter-spacing:0.3px}
+.company-founder{
+  display:flex;align-items:center;gap:14px;
+  background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-sm);
+  padding:16px 20px;margin-top:16px;
+}
+.company-founder img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.company-founder .cf-name{font-size:14px;font-weight:700;color:var(--text)}
+.company-founder .cf-role{font-size:11px;color:var(--gold)}
+.about-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.about-tags span{
+  background:var(--bg-card);border:1px solid var(--border);
+  color:var(--text);font-size:11px;font-weight:600;
+  padding:6px 14px;border-radius:8px;
+}
+
+/* ─── STATS ROW ─── */
+.stat-row{
+  background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:40px 0;
+}
+.stat-row .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+.stat-num{font-family:'Outfit',sans-serif;font-size:42px;font-weight:900;line-height:1;background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-lbl{font-size:11px;font-weight:600;color:var(--muted);margin-top:5px;text-transform:uppercase;letter-spacing:0.5px}
+
+/* ─── SECTION HEADINGS ─── */
+.sec-tag{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(212,175,55,0.06);border:1px solid rgba(212,175,55,0.12);
+  color:var(--gold);font-size:9.5px;font-weight:700;letter-spacing:1.8px;
+  text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:12px;
+}
+.sec-tag::before{content:'';width:5px;height:5px;background:var(--gold);border-radius:50%}
+.sec-title{
+  font-family:'Outfit',sans-serif;font-size:clamp(24px,3vw,34px);font-weight:800;
+  letter-spacing:-0.3px;margin-bottom:36px;
+}
+.sec-title .g{background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ─── ABOUT ─── */
+.about-grid{display:grid;grid-template-columns:300px 1fr;gap:50px;align-items:start}
+.about-img-box{position:relative}
+.about-img-box img{width:100%;border-radius:18px;border:2px solid rgba(212,175,55,0.2);box-shadow:0 12px 40px rgba(0,0,0,0.4);display:block}
+.about-quote{
+  font-size:15px;font-style:italic;color:var(--muted);
+  border-left:3px solid var(--gold);padding-left:20px;margin:20px 0;line-height:1.8;
+}
+.about-text{font-size:13.5px;color:var(--muted);line-height:1.85;margin-bottom:16px}
+
+/* ─── CARD ─── */
+.card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:var(--radius);
+  transition:border-color 0.25s,box-shadow 0.25s,transform 0.3s;
+}
+.card:hover{
+  border-color:var(--border-h);
+  box-shadow:0 8px 32px rgba(0,0,0,0.35);
+  transform:translateY(-3px);
+}
+
+/* ─── SKILLS ─── */
+.skills-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.skill-bars{display:flex;flex-direction:column;gap:14px}
+.skill-row-hd{display:flex;justify-content:space-between;font-size:12.5px;font-weight:600;color:var(--text);margin-bottom:6px}
+.skill-track{height:6px;background:rgba(255,255,255,0.04);border-radius:50px;overflow:hidden}
+.skill-fill{
+  height:100%;border-radius:50px;width:0;
+  background:linear-gradient(90deg,var(--gold),var(--gold2));
+  transition:width 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+.skill-fill.c{background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.skill-fill.p{background:linear-gradient(90deg,var(--purple),var(--pink))}
+.skill-fill.g{background:linear-gradient(90deg,var(--green),var(--cyan))}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{
+  background:var(--bg-card);border:1px solid var(--border);
+  color:var(--muted);font-size:11.5px;font-weight:500;
+  padding:7px 14px;border-radius:8px;
+  transition:all 0.22s;cursor:default;
+}
+.tag:hover{
+  background:rgba(212,175,55,0.06);border-color:rgba(212,175,55,0.2);
+  color:var(--gold);transform:translateY(-2px);
+}
+
+/* ─── PROJECTS ─── */
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.proj-card{padding:26px}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px}
+.proj-icon{
+  width:40px;height:40px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;font-size:18px;
+}
+.ic-gold{background:rgba(212,175,55,0.1)}
+.ic-cyan{background:rgba(34,211,238,0.1)}
+.ic-purple{background:rgba(139,92,246,0.1)}
+.ic-blue{background:rgba(59,130,246,0.1)}
+.ic-green{background:rgba(34,197,94,0.1)}
+.ic-pink{background:rgba(236,72,153,0.1)}
+.badge{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:9.5px;font-weight:700;letter-spacing:0.3px;
+  padding:4px 10px;border-radius:50px;
+}
+.badge-live{background:rgba(59,130,246,0.08);color:#60a5fa;border:1px solid rgba(59,130,246,0.15)}
+.badge-done{background:rgba(34,197,94,0.08);color:#22c55e;border:1px solid rgba(34,197,94,0.15)}
+.badge-open{background:rgba(139,92,246,0.08);color:#a78bfa;border:1px solid rgba(139,92,246,0.15)}
+.badge-live::before,.badge-done::before{
+  content:'';width:5px;height:5px;border-radius:50%;background:currentColor;
+  animation:blink-dot 1.5s infinite;
+}
+@keyframes blink-dot{0%,100%{opacity:1}50%{opacity:0.3}}
+.proj-name{font-family:'Outfit',sans-serif;font-size:15.5px;font-weight:700;color:var(--text);margin-bottom:6px}
+.proj-desc{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:14px}
+.proj-link{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:700;color:var(--gold);text-decoration:none;transition:gap 0.2s}
+.proj-link::after{content:'→'}
+.proj-link:hover{gap:9px}
+
+/* ─── EXPERIENCE ─── */
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.exp-card{padding:28px}
+.exp-hd{display:flex;align-items:flex-start;gap:14px;margin-bottom:4px}
+.exp-dot{
+  width:10px;height:10px;border-radius:50%;background:var(--gold);
+  flex-shrink:0;margin-top:6px;box-shadow:0 0 10px rgba(212,175,55,0.4);
+}
+.exp-role{font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;color:var(--text)}
+.exp-company{font-size:12.5px;color:var(--gold);font-weight:600}
+.exp-date{
+  display:inline-block;font-size:10.5px;
+  background:rgba(255,255,255,0.03);border:1px solid var(--border);
+  color:var(--muted);padding:3px 10px;border-radius:50px;
+  margin:8px 0 12px 24px;
+}
+.exp-list{padding-left:24px}
+.exp-list li{font-size:12.5px;color:var(--muted);margin-bottom:6px;padding-left:10px;position:relative}
+.exp-list li::before{content:'▸';position:absolute;left:0;color:var(--gold);opacity:0.7}
+
+/* ─── EDUCATION ─── */
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu-card{padding:28px}
+.edu-card-title{font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:18px}
+.degree-item{margin-bottom:16px}
+.degree-item+.degree-item{padding-top:14px;border-top:1px solid var(--border)}
+.deg-name{font-size:13.5px;font-weight:700;color:var(--text);margin-bottom:2px}
+.deg-school{font-size:12px;color:var(--gold);font-weight:600}
+.deg-year{font-size:11px;color:var(--muted);margin-top:2px}
+.cert-list{display:flex;flex-direction:column;gap:10px}
+.cert-row{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted)}
+.cert-ico{
+  width:28px;height:28px;background:rgba(212,175,55,0.06);
+  border:1px solid rgba(212,175,55,0.12);border-radius:8px;
+  display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;
+}
+
+/* ─── CONTACT ─── */
+.contact-section{background:var(--bg2);border-top:1px solid var(--border)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.contact-info{display:flex;flex-direction:column;gap:16px}
+.contact-item{
+  display:flex;align-items:center;gap:14px;
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:16px 20px;border-radius:var(--radius);
+  transition:border-color 0.2s;
+}
+.contact-item:hover{border-color:rgba(212,175,55,0.15)}
+.contact-icon{
+  width:38px;height:38px;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:16px;
+  background:rgba(212,175,55,0.06);flex-shrink:0;
+}
+.contact-val{font-size:13px;color:var(--text);font-weight:500}
+.contact-val a{color:var(--gold);text-decoration:none;font-weight:600}
+.contact-val a:hover{text-decoration:underline}
+.contact-label{font-size:9.5px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.6px;margin-bottom:1px}
+
+.contact-form{
+  background:var(--bg-card);border:1px solid var(--border);
+  padding:32px;border-radius:var(--radius);
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.form-group{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.form-group label{font-size:11px;font-weight:600;color:var(--text);text-transform:uppercase;letter-spacing:0.5px}
+.form-group input,.form-group select,.form-group textarea{
+  background:#f0f2f5;
+  border:1px solid #d0d5dd;
+  color:#1a1a1a;
+  font-size:13px;padding:11px 14px;border-radius:var(--radius-sm);
+  font-family:'Plus Jakarta Sans',sans-serif;
+  transition:border-color 0.2s;outline:none;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:#667085}
+.form-group textarea{min-height:110px;resize:vertical}
+.form-group select{appearance:none;cursor:pointer}
+.form-submit{
+  width:100%;padding:13px;border-radius:var(--radius-sm);
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;font-size:14px;font-weight:700;border:none;
+  cursor:pointer;transition:all 0.25s;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.form-submit:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(212,175,55,0.3)}
+.form-submit:disabled{opacity:0.5;cursor:not-allowed}
+.form-msg{
+  margin-top:12px;padding:10px 14px;border-radius:var(--radius-sm);
+  font-size:12.5px;display:none;
+}
+.form-msg.success{display:block;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);color:#22c55e}
+.form-msg.error{display:block;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);color:#ef4444}
+
+/* ─── CONNECT BUTTONS ─── */
+.connect-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.soc-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 16px;border-radius:50px;font-size:12px;font-weight:600;
+  text-decoration:none;border:1px solid var(--border);
+  background:var(--bg-card);color:var(--text);
+  transition:all 0.22s;
+}
+.soc-btn:hover{background:rgba(212,175,55,0.06);border-color:rgba(212,175,55,0.25);color:var(--gold);transform:translateY(-2px)}
+
+/* ─── WHATSAPP FLOATING ─── */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  display:flex;align-items:center;gap:8px;
+  background:linear-gradient(135deg,#1B5E20,#2E7D32);
+  color:#fff;width:52px;height:52px;border-radius:50%;
+  text-decoration:none;font-weight:700;font-size:24px;
+  box-shadow:0 4px 16px rgba(27,94,32,0.4);
+  transition:all 0.25s;justify-content:center;
+}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 24px rgba(27,94,32,0.5)}
+.wa-float .wa-text{display:none}
+
+/* ─── CHATBOT ─── */
+.chat-toggle{
+  position:fixed;bottom:90px;right:24px;z-index:999;
+  width:52px;height:52px;border-radius:50%;
+  background:linear-gradient(135deg,#f0f0f0,#ffffff);
+  color:#333;border:1px solid #ddd;font-size:22px;cursor:pointer;
+  box-shadow:0 4px 16px rgba(0,0,0,0.12);
+  transition:all 0.25s;display:flex;align-items:center;justify-content:center;
+}
+.chat-toggle:hover{transform:scale(1.08);box-shadow:0 6px 20px rgba(0,0,0,0.18)}
+.chat-box{
+  position:fixed;bottom:152px;right:24px;z-index:998;
+  width:340px;height:460px;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:16px;
+  box-shadow:0 16px 60px rgba(0,0,0,0.5);
+  display:none;flex-direction:column;overflow:hidden;
+}
+.chat-box.open{display:flex}
+.chat-head{
+  padding:14px 16px;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  background:linear-gradient(135deg,rgba(212,175,55,0.06),rgba(34,211,238,0.04));
+}
+.chat-head-info{display:flex;align-items:center;gap:10px}
+.chat-avatar{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold2));display:flex;align-items:center;justify-content:center;font-size:14px;color:#000;font-weight:700}
+.chat-head-text{font-size:12.5px;font-weight:700;color:var(--text)}
+.chat-head-sub{font-size:9.5px;color:var(--muted)}
+.chat-close{background:none;border:none;color:var(--muted);font-size:18px;cursor:pointer;padding:4px;transition:color 0.2s}
+.chat-close:hover{color:var(--text)}
+.chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px}
+.chat-msgs::-webkit-scrollbar{width:4px}
+.chat-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:50px}
+.chat-msg{
+  max-width:85%;padding:10px 14px;border-radius:12px;
+  font-size:12.5px;line-height:1.55;animation:msgIn 0.25s ease;
+}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.chat-msg.bot{
+  background:#f0f2f5;border:1px solid #d0d5dd;
+  color:#1a1a1a;align-self:flex-start;border-bottom-left-radius:4px;
+}
+.chat-msg.user{
+  background:linear-gradient(135deg,rgba(212,175,55,0.15),rgba(34,211,238,0.1));
+  color:var(--text);align-self:flex-end;border-bottom-right-radius:4px;
+}
+.chat-msg.typing{
+  background:#f0f2f5;align-self:flex-start;
+  border-bottom-left-radius:4px;display:flex;gap:4px;padding:12px 16px;
+}
+.chat-msg.typing span{width:6px;height:6px;border-radius:50%;background:#667085;animation:typingBounce 1.4s infinite}
+.chat-msg.typing span:nth-child(2){animation-delay:0.2s}
+.chat-msg.typing span:nth-child(3){animation-delay:0.4s}
+@keyframes typingBounce{0%,60%,100%{opacity:0.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
+.chat-input-area{
+  display:flex;gap:8px;padding:10px 12px 12px;
+  border-top:1px solid var(--border);
+}
+.chat-input-area input{
+  flex:1;background:#f0f2f5;border:1px solid #d0d5dd;
+  color:#1a1a1a;font-size:12.5px;padding:10px 14px;border-radius:10px;
+  outline:none;font-family:'Plus Jakarta Sans',sans-serif;
+}
+.chat-input-area input:focus{border-color:var(--gold)}
+.chat-input-area input::placeholder{color:#667085}
+.chat-send{
+  width:38px;height:38px;border-radius:10px;border:none;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+  color:#000;font-size:16px;cursor:pointer;flex-shrink:0;
+  transition:all 0.2s;display:flex;align-items:center;justify-content:center;
+}
+.chat-send:hover{transform:scale(1.05)}
+.chat-send:disabled{opacity:0.4;cursor:not-allowed}
+
+/* ─── FOOTER ─── */
+footer{
+  background:#040609;border-top:1px solid var(--border);
+  padding:40px 24px;text-align:center;
+}
+.ft-logo{font-family:'Outfit',sans-serif;font-size:20px;font-weight:800;color:var(--text);margin-bottom:4px}
+.ft-logo span{color:var(--gold)}
+.ft-sub{font-size:11.5px;color:var(--muted);margin-bottom:14px}
+.ft-links{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-bottom:14px}
+.ft-links a{color:var(--muted);text-decoration:none;font-size:12px;font-weight:500;transition:color 0.2s}
+.ft-links a:hover{color:var(--gold)}
+.ft-copy{font-size:10.5px;color:rgba(136,146,168,0.4)}
+
+/* ─── SCROLL REVEAL ─── */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 0.6s ease,transform 0.6s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+.rv.d1{transition-delay:0.1s}
+.rv.d2{transition-delay:0.2s}
+.rv.d3{transition-delay:0.3s}
+.rv.d4{transition-delay:0.4s}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero-grid,.about-grid,.company-grid,.contact-wrap{grid-template-columns:1fr}
+  .hero-visual{order:-1;margin-bottom:20px}
+  .hero-img-wrap{width:220px;height:220px}
+  .proj-grid{grid-template-columns:1fr 1fr}
+  .skills-grid{grid-template-columns:1fr}
+  .company-stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:768px){
+  .proj-grid,.exp-grid,.edu-grid{grid-template-columns:1fr}
+  .stat-row .wrap,.company-stats{grid-template-columns:repeat(2,1fr)}
+  .nav-links li:not(:last-child){display:none}
+  .hero-title{font-size:30px}
+  .form-row{grid-template-columns:1fr}
+  .chat-box{width:calc(100vw - 32px);right:16px;bottom:144px;height:400px}
+  .wa-float{padding:10px 16px;font-size:12px;right:16px;bottom:16px}
+  .chat-toggle{right:16px;bottom:80px;width:46px;height:46px;font-size:19px}
+  .contact-form{padding:24px}
+}
+</style>
 </head>
 <body>
 
-  <!-- ── HEADER ── -->
-  <header>
-    <a href="#" class="nav-logo">
-      <img src="./excellence-logo.jpg" alt="ExcellenceLinks Logo">
-      <span class="nav-logo-name">Excellence<span>Links</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#ceo">About</a></li>
-      <li><a href="#ceo" class="nav-hire">💬 Connect</a></li>
-    </ul>
-  </header>
+<!-- ═══ HEADER ═══ -->
+<header>
+  <a href="#" class="nav-logo">
+    <img src="./excellence-logo.jpg" alt="ExcellenceLinks">
+    <span class="nav-logo-name">Excellence<span>Links</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#company">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact" class="nav-hire">Let's Talk</a></li>
+  </ul>
+</header>
 
-  <!-- ── BANNER ── -->
-  <div class="banner">
-    <img src="./excellence-banner.png" alt="ExcellenceLinks — Agentic AI Banner">
+<!-- ═══ TOP BANNER ═══ -->
+<div class="top-banner">
+  <img src="./excellence-banner.png" alt="ExcellenceLinks Banner">
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-bg">
+    <img src="./Linked in Banner.png" alt="">
   </div>
-
-  <!-- ── STATS ── -->
-  <div class="stat-row">
-    <div class="wrap">
-      <div class="rv">
-        <div class="stat-num" data-to="14">0</div>
-        <div class="stat-lbl">Years Experience</div>
+  <div class="wrap hero-grid">
+    <div class="rv">
+      <div class="hero-company">ExcellenceLinks</div>
+      <h1 class="hero-title">
+        Agentic AI <span class="grad-text">Solutions</span><br>
+        for Modern SMEs
+      </h1>
+      <p class="hero-sub">
+        We build <strong>AI Employees</strong>, multi-agent systems, and workflow automation that run your
+        operations <strong>24/7</strong> — cutting response times from hours to seconds and reducing
+        manual workload by <strong>60–70%</strong>.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">Let's Build Together →</a>
+        <a href="#projects" class="btn-secondary">View My Work</a>
       </div>
-      <div class="rv d1">
-        <div class="stat-num" data-to="50">0</div>
-        <div class="stat-lbl">Projects Delivered</div>
+      <div class="hero-strip">
+        <div class="hero-stat"><div class="hs-num">15+</div><div class="hs-lbl">Years Experience</div></div>
+        <div class="hero-stat"><div class="hs-num">50+</div><div class="hs-lbl">Projects Delivered</div></div>
+        <div class="hero-stat"><div class="hs-num">6</div><div class="hs-lbl">Live AI Products</div></div>
+        <div class="hero-stat"><div class="hs-num">60s</div><div class="hs-lbl">Avg Response Time</div></div>
+      </div>
+    </div>
+    <div class="hero-visual rv d2">
+      <div class="hero-img-wrap">
+        <div class="orbits"></div>
+        <div class="orbits"></div>
+        <div class="orbits"></div>
+        <img src="./ceo-shafqat.jpg" alt="Shafqat Sarwar — Founder & CEO">
+        <div class="float-badge">Founder &amp; CEO</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<div class="stat-row">
+  <div class="wrap">
+    <div class="rv"><div class="stat-num" data-to="15">0</div><div class="stat-lbl">Years Experience</div></div>
+    <div class="rv d1"><div class="stat-num" data-to="50">0</div><div class="stat-lbl">Projects Delivered</div></div>
+    <div class="rv d2"><div class="stat-num" data-to="6">0</div><div class="stat-lbl">Live AI Products</div></div>
+    <div class="rv d3"><div class="stat-num" data-to="100">0</div><div class="stat-lbl">% Client Satisfaction</div></div>
+  </div>
+</div>
+
+<!-- ═══ COMPANY ═══ -->
+<section id="company" class="company-section">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">ExcellenceLinks</div></div>
+    <h2 class="sec-title rv">Engineering AI Employees &amp; <span class="g">Autonomous Systems</span></h2>
+    <div class="company-grid">
+      <div class="company-img-box rv">
+        <img src="./excellence-banner.png" alt="ExcellenceLinks — Agentic AI">
       </div>
       <div class="rv d2">
-        <div class="stat-num" data-to="6">0</div>
-        <div class="stat-lbl">Live AI Products</div>
-      </div>
-      <div class="rv d3">
-        <div class="stat-num" data-to="100">0</div>
-        <div class="stat-lbl">% Client Satisfaction</div>
+        <blockquote class="company-mission">
+          "We don't just implement AI tools — we build practical, autonomous agentic systems that run 24/7, scale seamlessly, and transform operational workloads for SMEs."
+        </blockquote>
+        <p class="company-text">
+          <strong>ExcellenceLinks</strong> is a technology company founded in <strong>2010</strong> by <strong>Shafqat Sarwar</strong>,
+          specializing in <strong>Agentic AI</strong>, multi-agent systems, and workflow automation. We serve SMEs across
+          Pakistan and the UK, delivering AI-powered solutions that replace manual processes with scalable, intelligent automation.
+        </p>
+        <p class="company-text">
+          We have built <strong>6 live AI products</strong> and delivered <strong>50+ projects</strong> across education, retail,
+          professional services, and real estate. Our flagship platform <strong>TheMindGauge</strong> deploys AI Employees
+          that handle customer support, lead management, WhatsApp, email, and business operations 24/7.
+        </p>
+        <div class="company-stats">
+          <div class="company-stat"><div class="cs-num">15+</div><div class="cs-lbl">Years</div></div>
+          <div class="company-stat"><div class="cs-num">10+</div><div class="cs-lbl">SME Clients</div></div>
+          <div class="company-stat"><div class="cs-num">60-70%</div><div class="cs-lbl">Workload Reduction</div></div>
+        </div>
+        <div class="about-tags">
+          <span>🏢 Founded 2010</span>
+          <span>🌍 Pakistan / UK</span>
+          <span>🧠 Agentic AI</span>
+          <span>⚡ Automation</span>
+        </div>
+        <div class="company-founder">
+          <img src="./ceo-shafqat.jpg" alt="Shafqat Sarwar">
+          <div>
+            <div class="cf-name">Shafqat Sarwar</div>
+            <div class="cf-role">Founder &amp; CEO — Agentic AI Developer</div>
+          </div>
+        </div>
+        <div class="connect-row" style="margin-top:16px">
+          <a href="https://linkedin.com/in/shafqatsarwar" target="_blank" class="soc-btn">💼 LinkedIn</a>
+          <a href="https://github.com/Shafqatsarwar" target="_blank" class="soc-btn">🐙 GitHub</a>
+          <a href="https://themindgauge.com" target="_blank" class="soc-btn">🌐 TheMindGauge</a>
+          <a href="mailto:excellencelinks@hotmail.com" class="soc-btn">✉️ Email</a>
+        </div>
+        <p style="font-size:11.5px;color:var(--muted);margin-top:14px;line-height:1.7">
+          🎓 MS Network &amp; System Admin · MCS IT · BA Social Sciences<br>
+          🏆 Agentic AI · MCP · Prompt Engineering · Python · OpenAI Agents SDK
+        </p>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ── PROJECTS ── -->
-  <section id="projects">
-    <div class="wrap">
-      <div class="rv"><div class="sec-tag">Portfolio</div></div>
-      <h2 class="sec-title rv">Live AI Projects &amp; <span>Products</span></h2>
-
-      <div class="proj-grid">
-
-        <div class="card proj-card rv d1">
-          <div class="proj-top">
-            <div class="proj-icon ic-gold">🧠</div>
-            <span class="badge badge-live">Live</span>
-          </div>
-          <div class="proj-name">TheMindGauge</div>
-          <p class="proj-desc">AI Employee Platform deploying autonomous agents for customer support, lead management, WhatsApp, and email operations 24/7.</p>
-          <a href="https://themindgauge.com" target="_blank" class="proj-link">themindgauge.com</a>
-        </div>
-
-        <div class="card proj-card rv d2">
-          <div class="proj-top">
-            <div class="proj-icon ic-blue">🔗</div>
-            <span class="badge badge-live">Live</span>
-          </div>
-          <div class="proj-name">LinkedIn AI Agent</div>
-          <p class="proj-desc">Autonomous LinkedIn agent that automates profile management, content posting, engagement, and professional connection workflows using multi-agent AI.</p>
-          <a href="https://www.linkedin.com/in/shafqatsarwar/" target="_blank" class="proj-link">linkedin.com/in/shafqatsarwar</a>
-        </div>
-
-        <div class="card proj-card rv d3">
-          <div class="proj-top">
-            <div class="proj-icon ic-cyan">🤖</div>
-            <span class="badge badge-live">Live</span>
-          </div>
-          <div class="proj-name">AI Assistant 24/7</div>
-          <p class="proj-desc">Always-on digital business assistant automating customer interactions, enquiries, and routine business tasks around the clock.</p>
-          <a href="https://themindgauge.com" target="_blank" class="proj-link">themindgauge.com</a>
-        </div>
-
-        <div class="card proj-card rv d1">
-          <div class="proj-top">
-            <div class="proj-icon ic-purple">⚡</div>
-            <span class="badge badge-open">Open Source</span>
-          </div>
-          <div class="proj-name">OpenClaw AI Platform</div>
-          <p class="proj-desc">Open-source autonomous AI coding agents, Model Context Protocol (MCP) servers, and multi-agent workflow orchestration tools.</p>
-          <a href="https://github.com/Shafqatsarwar" target="_blank" class="proj-link">github.com/Shafqatsarwar</a>
-        </div>
-
-        <div class="card proj-card rv d2">
-          <div class="proj-top">
-            <div class="proj-icon ic-green">🔒</div>
-            <span class="badge badge-done">✓ 100% Performance</span>
-          </div>
-          <div class="proj-name">Secure Alerts System</div>
-          <p class="proj-desc">Privacy-first secure alerting and end-to-end encrypted messaging platform for enterprise business communication.</p>
-          <a href="https://alerts-joinquran.vercel.app" target="_blank" class="proj-link">alerts-joinquran.vercel.app</a>
-        </div>
-
-        <div class="card proj-card rv d3">
-          <div class="proj-top">
-            <div class="proj-icon ic-pink">📖</div>
-            <span class="badge badge-done">✓ 100% Performance</span>
-          </div>
-          <div class="proj-name">JoinQuran</div>
-          <p class="proj-desc">Digital learning platform with AI-powered vector store knowledge base providing intelligent support for students and teachers.</p>
-          <a href="https://joinquran.vercel.app" target="_blank" class="proj-link">joinquran.vercel.app</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── SKILLS ── -->
-  <section id="skills" style="background:#090c15; padding:72px 0;">
-    <div class="wrap">
-      <div class="rv"><div class="sec-tag">Expertise</div></div>
-      <h2 class="sec-title rv">Core Skills &amp; <span>Tech Stack</span></h2>
-      <div class="skills-wrap">
+<!-- ═══ SKILLS ═══ -->
+<section id="skills" class="skills-section">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Expertise</div></div>
+    <h2 class="sec-title rv">Core Skills &amp; <span class="g">Tech Stack</span></h2>
+    <div class="skills-grid">
+      <div>
         <div class="skill-bars rv">
-          <div class="skill-row">
-            <div class="skill-row-hd"><span>Agentic AI Development</span><span>98%</span></div>
-            <div class="skill-track"><div class="skill-fill" data-w="98"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-hd"><span>Multi-Agent Systems</span><span>95%</span></div>
-            <div class="skill-track"><div class="skill-fill" data-w="95"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-hd"><span>RAG Pipelines &amp; Vector Stores</span><span>92%</span></div>
-            <div class="skill-track"><div class="skill-fill c" data-w="92"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-hd"><span>Python &amp; FastAPI</span><span>90%</span></div>
-            <div class="skill-track"><div class="skill-fill c" data-w="90"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-hd"><span>Next.js &amp; TypeScript</span><span>88%</span></div>
-            <div class="skill-track"><div class="skill-fill p" data-w="88"></div></div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-row-hd"><span>Solution Architecture</span><span>94%</span></div>
-            <div class="skill-track"><div class="skill-fill p" data-w="94"></div></div>
-          </div>
-        </div>
-        <div class="rv d2">
-          <div class="tags">
-            <span class="tag">CrewAI</span>
-            <span class="tag">LangChain</span>
-            <span class="tag">OpenAI Agents SDK</span>
-            <span class="tag">MCP Protocol</span>
-            <span class="tag">Pinecone</span>
-            <span class="tag">Supabase</span>
-            <span class="tag">WhatsApp Business API</span>
-            <span class="tag">Workflow Automation</span>
-            <span class="tag">AI Employees</span>
-            <span class="tag">Agent Memory</span>
-            <span class="tag">Docker</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">React</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Vercel</span>
-            <span class="tag">GitHub Actions</span>
-          </div>
+          <div class="skill-row"><div class="skill-row-hd"><span>Agentic AI Development</span><span>98%</span></div><div class="skill-track"><div class="skill-fill" data-w="98"></div></div></div>
+          <div class="skill-row"><div class="skill-row-hd"><span>Multi-Agent Systems</span><span>95%</span></div><div class="skill-track"><div class="skill-fill" data-w="95"></div></div></div>
+          <div class="skill-row"><div class="skill-row-hd"><span>RAG Pipelines &amp; Vector Stores</span><span>92%</span></div><div class="skill-track"><div class="skill-fill c" data-w="92"></div></div></div>
+          <div class="skill-row"><div class="skill-row-hd"><span>Python &amp; FastAPI</span><span>90%</span></div><div class="skill-track"><div class="skill-fill c" data-w="90"></div></div></div>
+          <div class="skill-row"><div class="skill-row-hd"><span>CrewAI &amp; LangChain</span><span>94%</span></div><div class="skill-track"><div class="skill-fill p" data-w="94"></div></div></div>
+          <div class="skill-row"><div class="skill-row-hd"><span>Solution Architecture</span><span>93%</span></div><div class="skill-track"><div class="skill-fill p" data-w="93"></div></div></div>
+          <div class="skill-row"><div class="skill-row-hd"><span>WhatsApp Business API</span><span>88%</span></div><div class="skill-track"><div class="skill-fill g" data-w="88"></div></div></div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ── EXPERIENCE ── -->
-  <section id="experience">
-    <div class="wrap">
-      <div class="rv"><div class="sec-tag">Career</div></div>
-      <h2 class="sec-title rv">Professional <span>Experience</span></h2>
-      <div class="exp-grid">
-
-        <div class="card exp-card rv d1">
-          <div class="exp-hd">
-            <div class="exp-dot"></div>
-            <div>
-              <div class="exp-role">Executive Director &amp; Founder</div>
-              <div class="exp-company">The Mind Gauge</div>
-            </div>
-          </div>
-          <div class="exp-date">March 2012 – Present &middot; 13+ years &middot; Pakistan</div>
-          <ul class="exp-list">
-            <li>Designed and deployed Agentic AI systems for 10+ SME clients across Pakistan and UK.</li>
-            <li>Built AI Employee systems for customer support, WhatsApp automation, and CRM operations.</li>
-            <li>Architected TheMindGauge SaaS platform with 6 live AI products.</li>
-          </ul>
+      <div>
+        <div style="margin-bottom:16px"><div class="sec-tag" style="margin-bottom:0">Agent Frameworks</div></div>
+        <div class="tags" style="margin-bottom:20px">
+          <span class="tag">CrewAI</span><span class="tag">LangChain</span><span class="tag">OpenAI Agents SDK</span>
+          <span class="tag">MCP Protocol</span><span class="tag">Chainlit</span><span class="tag">Vercel AI SDK</span>
         </div>
-
-        <div class="card exp-card rv d2">
-          <div class="exp-hd">
-            <div class="exp-dot" style="background:var(--cyan);box-shadow:0 0 8px rgba(34,211,238,0.45);"></div>
-            <div>
-              <div class="exp-role">Director &amp; Founder</div>
-              <div class="exp-company" style="color:var(--cyan);">Excellence Links</div>
-            </div>
-          </div>
-          <div class="exp-date">November 2010 – Present &middot; 15+ years &middot; London, UK (Remote)</div>
-          <ul class="exp-list">
-            <li>Delivered technology solutions for 15+ businesses across education, retail, and professional services.</li>
-            <li>Reduced client operational workloads by 50–60% using custom SaaS automation.</li>
-            <li>End-to-end ownership across 50+ projects from architecture to deployment.</li>
-          </ul>
+        <div style="margin-bottom:16px"><div class="sec-tag" style="margin-bottom:0">RAG &amp; Memory</div></div>
+        <div class="tags" style="margin-bottom:20px">
+          <span class="tag">RAG Pipelines</span><span class="tag">Vector Stores</span><span class="tag">Agent Memory</span>
+          <span class="tag">Session Management</span><span class="tag">Knowledge Base Curation</span><span class="tag">Pinecone</span>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── EDUCATION & CERTS ── -->
-  <section style="padding-top:0; padding-bottom:72px;">
-    <div class="wrap">
-      <div class="rv"><div class="sec-tag">Credentials</div></div>
-      <h2 class="sec-title rv">Education &amp; <span>Certifications</span></h2>
-      <div class="edu-grid">
-
-        <div class="card edu-card rv d1">
-          <div class="edu-card-title">🎓 Academic Degrees</div>
-          <div class="degree-item">
-            <div class="deg-name">MS — Network &amp; System Administration</div>
-            <div class="deg-school">Virtual University of Pakistan</div>
-            <div class="deg-year">2015 – 2017</div>
-          </div>
-          <div class="degree-item">
-            <div class="deg-name">MCS — IT &amp; Social Sciences</div>
-            <div class="deg-school">Quaid-e-Azam University, Islamabad</div>
-            <div class="deg-year">2009 – 2011</div>
-          </div>
-          <div class="degree-item">
-            <div class="deg-name">BA — Social Sciences</div>
-            <div class="deg-school">Bahauddin Zakariya University</div>
-            <div class="deg-year">2004 – 2008</div>
-          </div>
+        <div style="margin-bottom:16px"><div class="sec-tag" style="margin-bottom:0">APIs &amp; Infrastructure</div></div>
+        <div class="tags" style="margin-bottom:20px">
+          <span class="tag">REST APIs</span><span class="tag">FastAPI</span><span class="tag">WhatsApp Business API</span>
+          <span class="tag">CRM Integrations</span><span class="tag">Supabase</span><span class="tag">PostgreSQL</span><span class="tag">Docker</span>
         </div>
-
-        <div class="card edu-card rv d2">
-          <div class="edu-card-title">🏆 Certifications</div>
-          <div class="cert-list">
-            <div class="cert-row"><div class="cert-ico">🤖</div><span>Agentic AI Fundamentals — Level 1 &amp; 2</span></div>
-            <div class="cert-row"><div class="cert-ico">🔌</div><span>Model Context Protocol (MCP) — Level 2</span></div>
-            <div class="cert-row"><div class="cert-ico">💬</div><span>Prompt &amp; Context Engineering — Level 1 &amp; 2</span></div>
-            <div class="cert-row"><div class="cert-ico">🐍</div><span>Crash Course on Python</span></div>
-            <div class="cert-row"><div class="cert-ico">⚡</div><span>OpenAI Agents SDK &amp; Workflows</span></div>
-          </div>
+        <div style="margin-bottom:16px"><div class="sec-tag" style="margin-bottom:0">Development</div></div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span>
+          <span class="tag">Node.js</span><span class="tag">React</span><span class="tag">Next.js</span>
+          <span class="tag">GitHub Actions</span><span class="tag">Vercel</span>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CEO MESSAGE ── -->
-  <div class="ceo-section" id="ceo">
-    <div class="wrap">
-      <div class="ceo-layout">
-
-        <div class="ceo-img-box rv">
-          <img src="./ceo-shafqat.jpg" alt="Shafqat Sarwar — Founder & CEO ExcellenceLinks">
-          <div class="ceo-floater">Founder &amp; CEO</div>
-        </div>
-
-        <div class="rv d2">
-          <div class="ceo-tag">CEO Message</div>
-          <h2 class="ceo-name">Shafqat <span>Sarwar</span></h2>
-          <p class="ceo-sub">Agentic AI Developer &nbsp;·&nbsp; AI Automation Engineer &nbsp;·&nbsp; Founder, ExcellenceLinks</p>
-
-          <blockquote class="ceo-quote">
-            "We are entering the era of the AI Employee. At ExcellenceLinks, we don't just implement AI tools — we build practical, autonomous agentic systems that run 24/7, scale seamlessly, and transform operational workloads for SMEs."
-          </blockquote>
-
-          <p class="ceo-bio">
-            With over 14+ years of software development experience, I am 100% focused on creating multi-agent systems, custom RAG pipelines, and workflow automation. We have delivered 6 live AI products to clients in Pakistan and the UK, reducing manual operational response times from hours to under 60 seconds.
-          </p>
-
-          <div class="connect-row">
-            <a href="mailto:excellencelinks@hotmail.com" class="soc-btn">✉️ Email</a>
-            <a href="https://www.linkedin.com/in/shafqatsarwar/" target="_blank" class="soc-btn">💼 LinkedIn Profile</a>
-            <a href="https://www.linkedin.com/company/134524073/" target="_blank" class="soc-btn">🏢 ExcellenceLinks Co.</a>
-            <a href="https://github.com/Shafqatsarwar" target="_blank" class="soc-btn">🐙 GitHub</a>
-            <a href="https://themindgauge.com" target="_blank" class="soc-btn">🌐 TheMindGauge</a>
-
-            <!-- WhatsApp Connect Dropdown -->
-            <div class="drop-wrap">
-              <a class="wa-btn" href="#" onclick="return false;">💬 Connect Now</a>
-              <div class="drop-menu">
-                <a href="https://wa.me/923244279017" target="_blank" class="drop-item">
-                  <span style="font-size:20px;">🇵🇰</span>
-                  <div>
-                    <span class="drop-item-sub">Pakistan · WhatsApp</span>
-                    +92 324 427 9017
-                  </div>
-                </a>
-                <a href="https://wa.me/442081239145" target="_blank" class="drop-item">
-                  <span style="font-size:20px;">🇬🇧</span>
-                  <div>
-                    <span class="drop-item-sub">UK · WhatsApp</span>
-                    +44 208 123 9145
-                  </div>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
+</section>
 
-  <!-- ── CONTACT STRIP ── -->
-  <section style="padding:52px 0;">
-    <div class="wrap">
-      <div class="contact-grid">
-        <div class="card contact-card rv d1">
-          <span class="contact-ico">✉️</span>
-          <div class="contact-lbl">Primary Email</div>
-          <div class="contact-val"><a href="mailto:excellencelinks@hotmail.com">excellencelinks@hotmail.com</a></div>
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Portfolio</div></div>
+    <h2 class="sec-title rv">Live AI Projects &amp; <span class="g">Products</span></h2>
+    <div class="proj-grid">
+      <div class="card proj-card rv d1">
+        <div class="proj-top"><div class="proj-icon ic-gold">🧠</div><span class="badge badge-live">Live</span></div>
+        <div class="proj-name">TheMindGauge</div>
+        <p class="proj-desc">AI Employee Platform deploying autonomous agents for customer support, lead management, WhatsApp, email, LinkedIn and business operations 24/7.</p>
+        <a href="https://themindgauge.com" target="_blank" class="proj-link">themindgauge.com</a>
+      </div>
+      <div class="card proj-card rv d2">
+        <div class="proj-top"><div class="proj-icon ic-blue">🔗</div><span class="badge badge-live">Live</span></div>
+        <div class="proj-name">LinkedIn AI Agent</div>
+        <p class="proj-desc">Autonomous LinkedIn agent that automates profile management, content posting, headline updates, and professional connection workflows.</p>
+        <a href="https://themindgauge.com" target="_blank" class="proj-link">themindgauge.com</a>
+      </div>
+      <div class="card proj-card rv d3">
+        <div class="proj-top"><div class="proj-icon ic-cyan">🤖</div><span class="badge badge-live">Live</span></div>
+        <div class="proj-name">AI Assistant 24/7</div>
+        <p class="proj-desc">Always-on digital business assistant automating customer interactions, enquiries, and routine business tasks around the clock.</p>
+        <a href="https://themindgauge.com" target="_blank" class="proj-link">themindgauge.com</a>
+      </div>
+      <div class="card proj-card rv d1">
+        <div class="proj-top"><div class="proj-icon ic-purple">⚡</div><span class="badge badge-open">Open Source</span></div>
+        <div class="proj-name">OpenClaw AI Platform</div>
+        <p class="proj-desc">Open-source autonomous AI coding agents, MCP servers, and multi-agent workflow orchestration tools for software and business automation.</p>
+        <a href="https://github.com/Shafqatsarwar" target="_blank" class="proj-link">github.com/Shafqatsarwar</a>
+      </div>
+      <div class="card proj-card rv d2">
+        <div class="proj-top"><div class="proj-icon ic-green">🔒</div><span class="badge badge-done">✓ Live</span></div>
+        <div class="proj-name">Secure Alerts System</div>
+        <p class="proj-desc">Privacy-first secure alerting and end-to-end encrypted messaging platform for enterprise business communication.</p>
+        <a href="https://alerts-joinquran.vercel.app" target="_blank" class="proj-link">alerts-joinquran.vercel.app</a>
+      </div>
+      <div class="card proj-card rv d3">
+        <div class="proj-top"><div class="proj-icon ic-pink">📖</div><span class="badge badge-done">✓ Live</span></div>
+        <div class="proj-name">JoinQuran</div>
+        <p class="proj-desc">Digital Quran learning platform with AI-powered chatbot using vector store knowledge base providing intelligent support for students and teachers worldwide.</p>
+        <a href="https://joinquran.vercel.app" target="_blank" class="proj-link">joinquran.vercel.app</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="skills-section">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Career</div></div>
+    <h2 class="sec-title rv">Professional <span class="g">Experience</span></h2>
+    <div class="exp-grid">
+      <div class="card exp-card rv d1">
+        <div class="exp-hd"><div class="exp-dot"></div><div><div class="exp-role">Executive Director &amp; Founder</div><div class="exp-company">The Mind Gauge</div></div></div>
+        <div class="exp-date">March 2012 – Present · 14+ years · Pakistan</div>
+        <ul class="exp-list">
+          <li>Deployed Agentic AI systems for 10+ SME clients across Pakistan and UK — reducing manual response time by 60–70%.</li>
+          <li>Built AI Employee systems for customer support, WhatsApp automation, CRM operations, and lead management — automating hundreds of workflows monthly.</li>
+          <li>Architected TheMindGauge SaaS platform with 6 live AI products in production.</li>
+          <li>Implemented RAG pipelines using OpenAI Agents SDK vector stores for domain-specific AI chatbots.</li>
+          <li>Built agent memory and session management for multi-turn conversation continuity.</li>
+          <li>Cut average customer response time from hours to under 60 seconds via AI-powered automation.</li>
+        </ul>
+      </div>
+      <div class="card exp-card rv d2">
+        <div class="exp-hd"><div class="exp-dot" style="background:var(--cyan);box-shadow:0 0 10px rgba(34,211,238,0.4)"></div><div><div class="exp-role">Director &amp; Founder</div><div class="exp-company" style="color:var(--cyan)">Excellence Links</div></div></div>
+        <div class="exp-date">November 2010 – Present · 15+ years · London, UK (Remote)</div>
+        <ul class="exp-list">
+          <li>Delivered technology solutions for 15+ businesses across education, retail, professional services, and real estate.</li>
+          <li>Deployed AI-powered workflow automation reducing client operational workload by 50–60%.</li>
+          <li>Built and launched 6+ custom SaaS platforms and web/mobile applications from concept to deployment.</li>
+          <li>Integrated WhatsApp Business API, CRM platforms, payment gateways, and 10+ third-party APIs.</li>
+          <li>End-to-end ownership across 50+ software projects: architecture, development, testing, deployment, and support.</li>
+          <li>Reduced client response time from hours to under 60 seconds using AI communication automation.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═══ -->
+<section style="padding:80px 0">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Credentials</div></div>
+    <h2 class="sec-title rv">Education &amp; <span class="g">Certifications</span></h2>
+    <div class="edu-grid">
+      <div class="card edu-card rv d1">
+        <div class="edu-card-title">🎓 Academic Degrees</div>
+        <div class="degree-item"><div class="deg-name">MS — Network &amp; System Administration</div><div class="deg-school">Virtual University of Pakistan</div><div class="deg-year">2015 – 2017</div></div>
+        <div class="degree-item"><div class="deg-name">MCS — IT &amp; Social Sciences</div><div class="deg-school">Quaid-e-Azam University, Islamabad</div><div class="deg-year">2009 – 2011</div></div>
+        <div class="degree-item"><div class="deg-name">BA — Social Sciences</div><div class="deg-school">Bahauddin Zakariya University</div><div class="deg-year">2004 – 2008</div></div>
+      </div>
+      <div class="card edu-card rv d2">
+        <div class="edu-card-title">🏆 Certifications</div>
+        <div class="cert-list">
+          <div class="cert-row"><div class="cert-ico">🤖</div><span>Agentic AI Fundamentals — Level 1 &amp; Level 2</span></div>
+          <div class="cert-row"><div class="cert-ico">🔌</div><span>Model Context Protocol (MCP) — Level 2</span></div>
+          <div class="cert-row"><div class="cert-ico">💬</div><span>Prompt &amp; Context Engineering — Level 1 &amp; Level 2</span></div>
+          <div class="cert-row"><div class="cert-ico">🐍</div><span>Crash Course on Python</span></div>
+          <div class="cert-row"><div class="cert-ico">⚡</div><span>OpenAI Agents SDK &amp; Workflows</span></div>
         </div>
-        <div class="card contact-card rv d2">
-          <span class="contact-ico">📧</span>
-          <div class="contact-lbl">Backup Email</div>
-          <div class="contact-val"><a href="mailto:khansarwar1@hotmail.com">khansarwar1@hotmail.com</a></div>
-        </div>
-        <div class="card contact-card rv d3">
-          <span class="contact-ico">📍</span>
-          <div class="contact-lbl">Location</div>
-          <div class="contact-val">Pakistan / London, UK</div>
-        </div>
-        <div class="card contact-card rv d1">
-          <span class="contact-ico">🇵🇰</span>
-          <div class="contact-lbl">Pakistan · WhatsApp</div>
-          <div class="contact-val"><a href="https://wa.me/923244279017" target="_blank">+92 324 427 9017</a></div>
-        </div>
-        <div class="card contact-card rv d2">
-          <span class="contact-ico">🇬🇧</span>
-          <div class="contact-lbl">UK · WhatsApp</div>
-          <div class="contact-val"><a href="https://wa.me/442081239145" target="_blank">+44 208 123 9145</a></div>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid var(--border)">
+          <div class="cert-row" style="margin-bottom:10px"><div class="cert-ico" style="background:rgba(34,211,238,0.06);border-color:rgba(34,211,238,0.12)">📘</div><span>Online Presence</span></div>
+          <div style="display:flex;flex-direction:column;gap:6px;padding-left:38px">
+            <span style="font-size:12px;color:var(--muted)">🔗 <a href="https://linkedin.com/in/shafqatsarwar" target="_blank" style="color:var(--gold);text-decoration:none">linkedin.com/in/shafqatsarwar</a></span>
+            <span style="font-size:12px;color:var(--muted)">🐙 <a href="https://github.com/Shafqatsarwar" target="_blank" style="color:var(--gold);text-decoration:none">github.com/Shafqatsarwar</a> (94 repos)</span>
+            <span style="font-size:12px;color:var(--muted)">🌐 <a href="https://themindgauge.com" target="_blank" style="color:var(--gold);text-decoration:none">themindgauge.com</a></span>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ── FOOTER ── -->
-  <footer>
-    <div class="ft-logo">Excellence<span>Links</span></div>
-    <div class="ft-sub">Engineering Autonomous AI Employees &amp; Systems for the Future</div>
-    <div class="ft-copy">© 2026 ExcellenceLinks. All rights reserved.</div>
-  </footer>
+<!-- ═══ CONTACT ═══ -->
+<section id="contact" class="contact-section">
+  <div class="wrap">
+    <div class="rv"><div class="sec-tag">Get in Touch</div></div>
+    <h2 class="sec-title rv">Let's Build <span class="g">Your AI Employee</span></h2>
+    <div class="contact-wrap">
+      <div class="contact-info rv">
+        <div class="contact-item"><div class="contact-icon">✉️</div><div><div class="contact-label">Email</div><div class="contact-val"><a href="mailto:excellencelinks@hotmail.com">excellencelinks@hotmail.com</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:rgba(37,211,102,0.06)">💬</div><div><div class="contact-label">WhatsApp (Pakistan)</div><div class="contact-val"><a href="https://wa.me/923244279017" target="_blank">+92 324 427 9017</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:rgba(37,211,102,0.06)">💬</div><div><div class="contact-label">WhatsApp (UK)</div><div class="contact-val"><a href="https://wa.me/442081239145" target="_blank">+44 208 123 9145</a></div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:rgba(34,211,238,0.06)">📍</div><div><div class="contact-label">Location</div><div class="contact-val">Pakistan / London, UK (Remote)</div></div></div>
+        <div class="contact-item"><div class="contact-icon" style="background:rgba(139,92,246,0.06)">🔗</div><div><div class="contact-label">LinkedIn</div><div class="contact-val"><a href="https://linkedin.com/in/shafqatsarwar" target="_blank">linkedin.com/in/shafqatsarwar</a></div></div></div>
+        <div style="margin-top:4px"><p style="font-size:12px;color:var(--muted);line-height:1.6">Ready to automate your business with AI Employees? Let's discuss how I can help transform your operations with custom multi-agent systems and workflow automation.</p></div>
+      </div>
+      <form class="contact-form rv d2" id="contactForm">
+        <div class="form-row">
+          <div class="form-group"><label for="name">Your Name *</label><input type="text" id="name" placeholder="John Doe" required></div>
+          <div class="form-group"><label for="email">Your Email *</label><input type="email" id="email" placeholder="john@example.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label for="phone">Phone</label><input type="tel" id="phone" placeholder="+92 300 123 4567"></div>
+          <div class="form-group"><label for="subject">Subject</label>
+            <select id="subject">
+              <option value="">Select a topic...</option>
+              <option value="AI Employee Development">AI Employee Development</option>
+              <option value="Multi-Agent System">Multi-Agent System</option>
+              <option value="Workflow Automation">Workflow Automation</option>
+              <option value="Consulting">Consulting</option>
+              <option value="Partnership">Partnership</option>
+              <option value="General Inquiry">General Inquiry</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group"><label for="message">Your Message *</label><textarea id="message" placeholder="Tell me about your project or idea..." required></textarea></div>
+        <button type="submit" class="form-submit" id="submitBtn">Send Message ✈️</button>
+        <div class="form-msg" id="formMsg"></div>
+      </form>
+    </div>
+  </div>
+</section>
 
-  <script>
-    // Scroll reveal
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="ft-logo">Excellence<span>Links</span></div>
+  <div class="ft-sub">Engineering Autonomous AI Employees &amp; Systems for the Future</div>
+  <div class="ft-links">
+    <a href="#company">About</a><a href="#skills">Skills</a>
+    <a href="#projects">Projects</a><a href="#contact">Contact</a>
+    <a href="https://github.com/Shafqatsarwar" target="_blank">GitHub</a>
+    <a href="https://linkedin.com/in/shafqatsarwar" target="_blank">LinkedIn</a>
+    <a href="https://themindgauge.com" target="_blank">TheMindGauge</a>
+  </div>
+  <div class="ft-copy">© 2026 ExcellenceLinks. All rights reserved.</div>
+</footer>
 
-    // Counter animation
-    const cObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        const el = e.target;
-        const target = parseInt(el.dataset.to);
-        let cur = 0;
-        const step = Math.ceil(target / 55);
-        const t = setInterval(() => {
-          cur = Math.min(cur + step, target);
-          el.textContent = cur + '+';
-          if (cur >= target) clearInterval(t);
-        }, 22);
-        cObs.unobserve(el);
-      });
-    }, { threshold: 0.5 });
-    document.querySelectorAll('.stat-num[data-to]').forEach(el => cObs.observe(el));
+<!-- ═══ WHATSAPP FLOAT ═══ -->
+<a href="https://wa.me/923244279017" target="_blank" class="wa-float" title="Chat on WhatsApp">
+  💬
+</a>
 
-    // Skill bars
-    const bObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        e.target.querySelectorAll('.skill-fill[data-w]').forEach(b => {
-          b.style.width = b.dataset.w + '%';
-        });
-        bObs.unobserve(e.target);
-      });
-    }, { threshold: 0.25 });
-    document.querySelectorAll('.skill-bars').forEach(el => bObs.observe(el));
-  </script>
+<!-- ═══ CHATBOT ═══ -->
+<button class="chat-toggle" id="chatToggle" aria-label="Toggle AI Chat">🤖</button>
+<div class="chat-box" id="chatBox">
+  <div class="chat-head">
+    <div class="chat-head-info"><div class="chat-avatar">E</div><div><div class="chat-head-text">ExcellenceLinks AI</div><div class="chat-head-sub">Ask me anything</div></div></div>
+    <button class="chat-close" id="chatClose">✕</button>
+  </div>
+  <div class="chat-msgs" id="chatMsgs">
+    <div class="chat-msg bot">Hi! 👋 Thanks for visiting ExcellenceLinks. Ask me about our AI solutions, or reach me directly on WhatsApp at wa.me/923244279017</div>
+  </div>
+  <div class="chat-input-area">
+    <input type="text" id="chatInput" placeholder="Type your question..." autocomplete="off">
+    <button class="chat-send" id="chatSend">➤</button>
+  </div>
+</div>
 
+<script>
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); }, { threshold: 0.08 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+const cObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; const target = parseInt(el.dataset.to);
+    let cur = 0; const step = Math.ceil(target / 55);
+    const t = setInterval(() => { cur = Math.min(cur + step, target); el.textContent = cur + '+'; if (cur >= target) clearInterval(t); }, 22);
+    cObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-to]').forEach(el => cObs.observe(el));
+
+const bObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (!e.isIntersecting) return; e.target.querySelectorAll('.skill-fill[data-w]').forEach(b => { b.style.width = b.dataset.w + '%'; }); bObs.unobserve(e.target); });
+}, { threshold: 0.25 });
+document.querySelectorAll('.skill-bars').forEach(el => bObs.observe(el));
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn'); const msg = document.getElementById('formMsg');
+  const data = { name: document.getElementById('name').value, email: document.getElementById('email').value, phone: document.getElementById('phone').value, subject: document.getElementById('subject').value, message: document.getElementById('message').value };
+  btn.disabled = true; btn.textContent = 'Sending...'; msg.className = 'form-msg';
+  try {
+    const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+    const d = await res.json();
+    if (res.ok) { msg.className = 'form-msg success'; msg.textContent = '✅ Message sent! We\'ll get back to you within 24 hours.'; this.reset(); }
+    else { msg.className = 'form-msg error'; msg.textContent = '❌ ' + (d.error || 'Failed to send.'); }
+  } catch { msg.className = 'form-msg error'; msg.textContent = '❌ Network error. Email us at excellencelinks@hotmail.com'; }
+  btn.disabled = false; btn.textContent = 'Send Message ✈️';
+});
+
+const chatToggle = document.getElementById('chatToggle');
+const chatBox = document.getElementById('chatBox');
+const chatClose = document.getElementById('chatClose');
+const chatInput = document.getElementById('chatInput');
+const chatSend = document.getElementById('chatSend');
+const chatMsgs = document.getElementById('chatMsgs');
+let chatHistory = [];
+
+chatToggle.addEventListener('click', () => { chatBox.classList.toggle('open'); if (chatBox.classList.contains('open')) chatInput.focus(); });
+chatClose.addEventListener('click', () => chatBox.classList.remove('open'));
+
+function addMsg(text, type) { const div = document.createElement('div'); div.className = 'chat-msg ' + type; div.textContent = text; chatMsgs.appendChild(div); chatMsgs.scrollTop = chatMsgs.scrollHeight; }
+function showTyping() { const div = document.createElement('div'); div.className = 'chat-msg typing'; div.id = 'typingIndicator'; div.innerHTML = '<span></span><span></span><span></span>'; chatMsgs.appendChild(div); chatMsgs.scrollTop = chatMsgs.scrollHeight; }
+function hideTyping() { const el = document.getElementById('typingIndicator'); if (el) el.remove(); }
+
+async function sendMessage() {
+  const text = chatInput.value.trim(); if (!text) return;
+  chatInput.value = ''; addMsg(text, 'user'); showTyping(); chatSend.disabled = true;
+  try {
+    const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ message: text, history: chatHistory }) });
+    const data = await res.json(); hideTyping();
+    if (res.ok) { addMsg(data.reply, 'bot'); chatHistory = data.history; }
+    else addMsg('Please reach out via WhatsApp wa.me/923244279017 or email excellencelinks@hotmail.com for a quick response! 💬', 'bot');
+  } catch { hideTyping(); addMsg('Network error. Reach me on WhatsApp at +92 324 427 9017', 'bot'); }
+  chatSend.disabled = false;
+}
+chatSend.addEventListener('click', sendMessage);
+chatInput.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+
+document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', e => { e.preventDefault(); const target = document.querySelector(a.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }); });
+</script>
 </body>
 </html>

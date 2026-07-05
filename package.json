@@ -1,0 +1,13 @@
+{
+  "name": "excellencelinks",
+  "version": "1.0.0",
+  "description": "Shafqat Sarwar — Agentic AI Developer Portfolio",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo static"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "nodemailer": "^6.9.0"
+  }
+}
