@@ -33,3 +33,5 @@ Open http://localhost:3000 to review
 After local approval, deploy with vercel --prod
 Full restart command for future use:
 Get-Process -Name node -ErrorAction SilentlyContinue | Stop-Process -Force; Start-Sleep 1; node server.js
+### opencode:
+opencode -s ses_0d054f1daffeeRF1cMwuhFdLNQ
