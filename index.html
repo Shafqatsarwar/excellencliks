@@ -9,7 +9,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="ExcellenceLinks">
 <link rel="canonical" href="https://excellencelinks.vercel.app/">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="manifest" href="./public/site.webmanifest">
 <meta name="theme-color" content="#D4AF37">
 
 <!-- Open Graph / Facebook -->
@@ -17,7 +17,7 @@
 <meta property="og:url" content="https://excellencelinks.vercel.app/">
 <meta property="og:title" content="ExcellenceLinks — Agentic AI Employees &amp; Enterprise Workflow Automation">
 <meta property="og:description" content="Deploy 24/7 autonomous AI Employees, multi-agent workflows, and RAG pipelines for your business. Cutting response times to under 60 seconds and reducing manual workload by 60–70%.">
-<meta property="og:image" content="https://excellencelinks.vercel.app/excellence-banner.png">
+<meta property="og:image" content="https://excellencelinks.vercel.app/public/excellence-banner.webp">
 <meta property="og:site_name" content="ExcellenceLinks">
 <meta property="og:locale" content="en_US">
 
@@ -26,7 +26,7 @@
 <meta name="twitter:url" content="https://excellencelinks.vercel.app/">
 <meta name="twitter:title" content="ExcellenceLinks — Agentic AI Employees &amp; Enterprise Automation">
 <meta name="twitter:description" content="Autonomous AI Employees and multi-agent systems engineered for SMEs in Pakistan, UK, and global enterprises.">
-<meta name="twitter:image" content="https://excellencelinks.vercel.app/excellence-banner.png">
+<meta name="twitter:image" content="https://excellencelinks.vercel.app/public/excellence-banner.webp">
 
 <!-- JSON-LD Structured Data Schema Markup -->
 <script type="application/ld+json">
@@ -38,8 +38,8 @@
       "@id": "https://excellencelinks.vercel.app/#organization",
       "name": "ExcellenceLinks",
       "url": "https://excellencelinks.vercel.app/",
-      "logo": "https://excellencelinks.vercel.app/excellence-logo.jpg",
-      "image": "https://excellencelinks.vercel.app/excellence-banner.png",
+      "logo": "https://excellencelinks.vercel.app/public/excellence-logo.webp",
+      "image": "https://excellencelinks.vercel.app/public/excellence-banner.webp",
       "description": "ExcellenceLinks is an enterprise Agentic AI development company specializing in autonomous AI Employees, multi-agent systems, and business workflow automation.",
       "foundingDate": "2010",
       "founder": {
@@ -346,6 +346,16 @@ header{
   padding:8px 20px;border-radius:50px;
   box-shadow:0 6px 20px rgba(212,175,55,0.4), 0 0 10px rgba(212,175,55,0.3);
   letter-spacing:0.3px;
+}
+.ceo-banner-card{
+  width:100%;max-width:1100px;margin:0 auto 28px auto;
+  border-radius:18px;overflow:hidden;
+  border:1.5px solid rgba(212,175,55,0.35);
+  box-shadow:0 12px 36px rgba(0,0,0,0.45);
+  background:var(--bg-card);
+}
+.ceo-banner-img{
+  width:100%;height:auto;max-height:260px;object-fit:cover;display:block;
 }
 .ceo-name{
   font-family:'Outfit',sans-serif;font-size:clamp(32px,3vw,44px);font-weight:800;
@@ -822,7 +832,7 @@ footer{
 <!-- ═══ HEADER ═══ -->
 <header>
   <a href="#" class="nav-logo">
-    <img src="./excellence-logo.jpg" alt="ExcellenceLinks — Agentic AI Solutions &amp; Enterprise Automation">
+    <img src="./public/excellence-logo.webp" alt="ExcellenceLinks — Agentic AI Solutions &amp; Enterprise Automation">
     <span class="nav-logo-name">Excellence<span>Links</span></span>
   </a>
   <ul class="nav-links">
@@ -836,13 +846,13 @@ footer{
 
 <!-- ═══ TOP BANNER ═══ -->
 <div class="top-banner">
-  <img src="./excellence-banner.png" alt="ExcellenceLinks — Agentic AI Solutions &amp; Enterprise Automation Banner">
+  <img src="./public/excellence-banner.webp" alt="ExcellenceLinks — Agentic AI Solutions &amp; Enterprise Automation Banner">
 </div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="./Linked in Banner.png" alt="ExcellenceLinks Agentic AI Solutions">
+    <img src="./public/linked-in-banner.webp" alt="ExcellenceLinks Agentic AI Solutions">
   </div>
   <div class="wrap hero-grid">
     <div class="rv">
@@ -873,7 +883,7 @@ footer{
           <div class="orbits"></div>
           <div class="orbits"></div>
           <div class="orbits"></div>
-          <img src="./ceo-shafqat.jpg" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks">
+          <img src="./public/ceo-shafqat.webp" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks">
           <div class="float-badge">Founder &amp; CEO ↗</div>
         </div>
       </a>
@@ -1021,12 +1031,17 @@ footer{
 <section id="company" class="company-section">
   <div class="wrap">
     
+    <!-- TOP COLORFUL LINKEDIN BANNER HEADER -->
+    <div class="ceo-banner-card rv">
+      <img src="./public/linked-in-banner.webp" alt="Shafqat Sarwar — Founder &amp; CEO ExcellenceLinks Banner" class="ceo-banner-img">
+    </div>
+
     <div class="ceo-showcase-grid rv d1">
       
       <!-- LEFT COLUMN: Large Portrait Photo Card with Floating Gold Badge -->
       <div class="ceo-photo-card">
         <a href="#experience" title="Click to view Career &amp; Professional Experience">
-          <img src="./ceo-shafqat.jpg" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks">
+          <img src="./public/ceo-shafqat.webp" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks">
           <div class="ceo-badge">Founder &amp; CEO</div>
         </a>
       </div>
