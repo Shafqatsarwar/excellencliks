@@ -17,10 +17,10 @@
     { "src": "/sitemap.xml/", "dest": "/api/sitemap" },
     { "src": "/public/sitemap.xml", "dest": "/api/sitemap" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/favicon.ico", "dest": "/public/excellence-logo.webp" },
+    { "src": "/favicon.ico", "dest": "/excellence-logo.webp" },
     { "src": "/site.webmanifest", "dest": "/public/site.webmanifest" },
     { "src": "/robots.txt", "dest": "/public/robots.txt" },
-    { "src": "/public/(.*)", "dest": "/public/$1" },
+    { "src": "/public/(.*)", "dest": "/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }

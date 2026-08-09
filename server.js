@@ -159,26 +159,28 @@ const server = http.createServer(async (req, res) => {
 
   // Static files
   let reqPath = req.url === '/' ? '/index.html' : req.url.split('?')[0];
-  let primaryPath = path.join(__dirname, 'public', reqPath);
-  let fallbackPath = path.join(__dirname, reqPath);
+  let cleanPath = reqPath.startsWith('/public/') ? reqPath.replace('/public/', '/') : reqPath;
+
+  const candidates = [
+    path.join(__dirname, 'public', cleanPath),
+    path.join(__dirname, cleanPath),
+    path.join(__dirname, 'public', reqPath),
+    path.join(__dirname, reqPath)
+  ];
 
   const ext = path.extname(reqPath);
   const contentType = MIME[ext] || 'application/octet-stream';
 
-  try {
-    const data = await fs.promises.readFile(primaryPath);
-    res.writeHead(200, { 'Content-Type': contentType });
-    return res.end(data);
-  } catch {
+  for (const filePath of candidates) {
     try {
-      const data = await fs.promises.readFile(fallbackPath);
+      const data = await fs.promises.readFile(filePath);
       res.writeHead(200, { 'Content-Type': contentType });
       return res.end(data);
-    } catch {
-      res.writeHead(404, { 'Content-Type': 'text/html' });
-      return res.end('<h1>404 Not Found</h1>');
-    }
+    } catch {}
   }
+
+  res.writeHead(404, { 'Content-Type': 'text/html' });
+  return res.end('<h1>404 Not Found</h1>');
 });
 
 server.listen(PORT, () => {
