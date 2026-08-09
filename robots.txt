@@ -1,0 +1,9 @@
+# Robots.txt for ExcellenceLinks — Agentic AI Solutions & Enterprise Automation
+User-agent: *
+Allow: /
+
+# Disallow API endpoints from direct crawling
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://excellencelinks.vercel.app/sitemap.xml
