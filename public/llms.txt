@@ -1,0 +1,49 @@
+# ExcellenceLinks
+
+> Agentic AI Employees, Multi-Agent Systems & Enterprise Workflow Automation
+
+ExcellenceLinks is an enterprise Agentic AI development company specializing in autonomous AI Employees, multi-agent systems, and business workflow automation. Founded in 2010 by Shafqat Sarwar with 15+ years of technology leadership.
+
+## Services
+
+- **Agentic AI Employee Development**: 24/7 autonomous digital employees for customer support, lead management, WhatsApp communications, CRM updates, and operational tasks
+- **Multi-Agent System Architecture**: Custom multi-agent workflows using CrewAI, LangChain, and OpenAI Agents SDK
+- **RAG Pipeline Engineering**: Retrieval-Augmented Generation pipelines with vector stores for domain-specific AI knowledge bases
+- **WhatsApp Business Automation**: AI-powered WhatsApp integration for automated customer interactions
+- **Enterprise SEO & Search Optimization**: Schema.org JSON-LD structured data, technical SEO architecture, and search visibility
+- **Workflow Automation**: End-to-end business process automation reducing manual workloads by 60-70%
+
+## Live AI Products
+
+- [TheMindGauge](https://themindgauge.com) — AI Employee Platform deploying autonomous agents for customer support, lead management, and business operations
+- [LinkedIn AI Agent](https://themindgauge.com) — Autonomous LinkedIn agent for profile management, content posting, and professional networking
+- [AI Assistant 24/7](https://themindgauge.com) — Always-on digital business assistant automating customer interactions
+- [OpenClaw AI Platform](https://github.com/Shafqatsarwar) — Open-source autonomous AI coding agents and multi-agent workflow orchestration
+- [Secure Alerts System](https://alerts-joinquran.vercel.app) — Privacy-first secure alerting and encrypted messaging platform
+- [JoinQuran](https://www.joinquran.com) — Digital Quran learning platform with AI-powered chatbot
+
+## Technology Stack
+
+CrewAI, LangChain, OpenAI Agents SDK, MCP Protocol, Chainlit, Vercel AI SDK, RAG Pipelines, Vector Stores, Pinecone, REST APIs, FastAPI, WhatsApp Business API, CRM Integrations, Supabase, PostgreSQL, Docker, Python, TypeScript, JavaScript, Node.js, React, Next.js
+
+## Key Metrics
+
+- 15+ years industry experience
+- 50+ projects delivered
+- 6 live AI products in production
+- 60-70% workload reduction for clients
+- Response times reduced from hours to under 60 seconds
+
+## Contact
+
+- **Email**: excellencelinks@hotmail.com
+- **Phone (UK)**: +44 208 123 9145
+- **WhatsApp**: +92 324 427 9017
+- **Location**: London, UK / Pakistan (Remote)
+- **LinkedIn**: [linkedin.com/company/134524073](https://www.linkedin.com/company/134524073/)
+- **GitHub**: [github.com/Shafqatsarwar](https://github.com/Shafqatsarwar)
+- **Website**: [excellencelinks.vercel.app](https://excellencelinks.vercel.app/)
+
+## Founder
+
+**Shafqat Sarwar** — Founder & CEO, Agentic AI Developer & AI Automation Engineer with 15+ years experience delivering AI automation solutions across Pakistan and the UK.

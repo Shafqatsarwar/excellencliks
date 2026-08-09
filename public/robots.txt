@@ -7,3 +7,6 @@ Disallow: /api/
 
 # Sitemap location
 Sitemap: https://excellencelinks.vercel.app/sitemap.xml
+
+# LLM Agent information
+# llms.txt: https://excellencelinks.vercel.app/llms.txt

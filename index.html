@@ -143,9 +143,31 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Preload critical font files for instant discovery (eliminates 3-hop chain) -->
+<link rel="preload" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NjuGObqx1XmO1I4e.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko.woff2" as="font" type="font/woff2" crossorigin>
+<!-- Inline critical @font-face with font-display: swap — eliminates render-blocking CSS -->
+<style>
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NjuGObqx1XmO1I4e.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+<!-- Async load full Google Fonts CSS as fallback for extended character sets -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
 <style>
 :root {
   --bg: #07090f;
@@ -848,15 +870,16 @@ footer{
   </ul>
 </header>
 
+<main>
 <!-- ═══ TOP BANNER ═══ -->
 <div class="top-banner">
-  <img src="/excellence-banner.webp" alt="ExcellenceLinks — Agentic AI Solutions &amp; Enterprise Automation Banner">
+  <img src="/excellence-banner.webp" alt="ExcellenceLinks — Agentic AI Solutions &amp; Enterprise Automation Banner" width="1140" height="480" fetchpriority="high">
 </div>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg">
-    <img src="/linked-in-banner.webp" alt="ExcellenceLinks Agentic AI Solutions">
+    <img src="/linked-in-banner.webp" alt="ExcellenceLinks Agentic AI Solutions" width="1140" height="480" loading="lazy">
   </div>
   <div class="wrap hero-grid">
     <div class="rv">
@@ -887,7 +910,7 @@ footer{
           <div class="orbits"></div>
           <div class="orbits"></div>
           <div class="orbits"></div>
-          <img src="/ceo-shafqat.webp" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks">
+          <img src="/ceo-shafqat.webp" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks" width="280" height="280">
           <div class="float-badge">Founder &amp; CEO ↗</div>
         </div>
       </a>
@@ -1037,7 +1060,7 @@ footer{
     
     <!-- TOP COLORFUL LINKEDIN BANNER HEADER -->
     <div class="ceo-banner-card rv">
-      <img src="/linked-in-banner.webp" alt="Shafqat Sarwar — Founder &amp; CEO ExcellenceLinks Banner" class="ceo-banner-img">
+      <img src="/linked-in-banner.webp" alt="Shafqat Sarwar — Founder &amp; CEO ExcellenceLinks Banner" class="ceo-banner-img" width="1100" height="260" loading="lazy">
     </div>
 
     <div class="ceo-showcase-grid rv d1">
@@ -1045,7 +1068,7 @@ footer{
       <!-- LEFT COLUMN: Large Portrait Photo Card with Floating Gold Badge -->
       <div class="ceo-photo-card">
         <a href="#experience" title="Click to view Career &amp; Professional Experience">
-          <img src="/ceo-shafqat.webp" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks">
+          <img src="/ceo-shafqat.webp" alt="Shafqat Sarwar — Founder &amp; CEO of ExcellenceLinks" width="370" height="460" loading="lazy">
           <div class="ceo-badge">Founder &amp; CEO</div>
         </a>
       </div>
@@ -1166,6 +1189,8 @@ footer{
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
