@@ -150,7 +150,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
   <!-- Preload Critical LCP Hero Images for Instant Discovery -->
   <link rel="preload" as="image" href="/ceo-shafqat.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" as="image" href="/linked-in-banner.webp" type="image/webp" fetchpriority="high">
@@ -367,6 +368,7 @@
       opacity: 0.08;
       position: absolute;
       inset: 0;
+      aspect-ratio: auto;
     }
 
     .hero-bg::after {
@@ -2004,7 +2006,7 @@
 
     .ft-copy {
       font-size: 10.5px;
-      color: rgba(136, 146, 168, 0.4)
+      color: rgba(160, 174, 192, 0.85)
     }
 
     /* ─── SCROLL REVEAL ─── */
@@ -2220,8 +2222,7 @@
     <!-- ═══ HERO ═══ -->
     <section class="hero">
       <div class="hero-bg">
-        <img src="/linked-in-banner.webp" alt="ExcellenceLinks Agentic AI Solutions" width="1140" height="480"
-          fetchpriority="high">
+        <img src="/linked-in-banner.webp" alt="ExcellenceLinks Agentic AI Solutions" fetchpriority="high">
       </div>
       <div class="wrap hero-grid">
         <div class="rv">
