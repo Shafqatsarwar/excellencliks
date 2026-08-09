@@ -36,6 +36,6 @@
     { "src": "/site.webmanifest", "dest": "/public/site.webmanifest" },
     { "src": "/robots.txt", "dest": "/public/robots.txt" },
     { "src": "/public/(.*)", "dest": "/$1" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    { "src": "/((?!api/|public/|.*\\..*).*)$", "dest": "/index.html" }
   ]
 }
