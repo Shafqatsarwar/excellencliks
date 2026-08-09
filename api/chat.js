@@ -54,7 +54,7 @@ About ExcellenceLinks:
 - Proven results: Cuts operational response times from hours to under 60 seconds and reduces manual workloads by 60–70%
 - Key Technologies: CrewAI, LangChain, OpenAI Agents SDK, MCP Protocol, Python, FastAPI, RAG vector stores, WhatsApp Business API
 - Contact: excellencelinks@hotmail.com | WhatsApp: +92 324 427 9017 / +44 208 123 9145
-- Website: https://excellencelinks.com | LinkedIn: linkedin.com/company/134524073/ | GitHub: github.com/Shafqatsarwar
+- Website: https://excellencelinks.vercel.app | LinkedIn: linkedin.com/company/134524073/ | GitHub: github.com/Shafqatsarwar
 
 Rules:
 1. Be friendly, professional, and business-focused.
