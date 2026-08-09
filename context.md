@@ -1,19 +1,19 @@
 # Goal
-Build a complete modern portfolio website for ExcellenceLinks / Shafqat Sarwar with company-first layout, contact form, WhatsApp link, and Google Gemini chatbot.
+Build a complete modern company website for ExcellenceLinks with enterprise SEO optimization, company-first layout, contact form, WhatsApp link, and Google Gemini chatbot proxy.
 ## Constraints & Preferences
-Company first (ExcellenceLinks), then founder portfolio below
+Company first (ExcellenceLinks enterprise branding), founder & executive leadership (Shafqat Sarwar)
 Colorful modern dark theme with gold/cyan/purple accents
-Form inputs must have light backgrounds with dark text for readability
+Form inputs have light backgrounds with dark text for readability
 WhatsApp button: dark green (#1B5E20), no phone number text, just an icon
 Chatbot toggle button: white/silver gradient
 LinkedIn Banner.png as hero background image (faint watermark), profile picture in circular frame with orbits
-Move all reference PDFs/screenshots to reference images/ folder
-Keep site simple — no unnecessary packages or extra features
+Keep site simple — single HTML file with enterprise SEO metadata and Schema.org JSON-LD
 Must not deploy to Vercel until user confirms; run locally at localhost:3000
 
 ## Key Decisions
-Company-first structure: hero leads with "ExcellenceLinks" branding, then Company section, then Founder/portfolio sections below
-Single-file HTML (no build step) — keeps site simple and fast to edit
+Company-first structure: hero leads with "ExcellenceLinks" branding & enterprise AI solutions, followed by company profile & founder/executive section
+Enterprise SEO Architecture: JSON-LD Schema (Organization, Service, FAQPage), Open Graph, Twitter Cards, canonical URL, sitemap.xml, robots.txt
+Single-file HTML (no build step) — keeps site fast, lightweight, and easily maintainable
 Light form inputs on dark theme — improves readability vs original dark-on-dark placeholders
 LinkedIn Banner as subtle full-width hero background — keeps profile picture as focal point
 

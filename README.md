@@ -1,12 +1,13 @@
-# ExcellenceLinks — Agentic AI Portfolio
+# ExcellenceLinks — Agentic AI Solutions & Enterprise Automation
 
 **AI Employees · Multi-Agent Systems · Workflow Automation**
 
-A modern, responsive portfolio website for **ExcellenceLinks** and its founder **Shafqat Sarwar** — an Agentic AI Developer building autonomous AI solutions for SMEs.
+A modern, high-performance website for **ExcellenceLinks** — an Agentic AI Development company founded by **Shafqat Sarwar**, building autonomous AI Employees and workflow automation for SMEs across Pakistan, the UK, and global markets.
 
 ## Features
 
-- **Company-first layout** — ExcellenceLinks showcased as the brand, followed by founder profile
+- **Enterprise SEO & Structured Data** — Optimized for Google & Bing with JSON-LD Schema (Organization, Service, FAQ), Open Graph, Twitter Cards, Sitemap, and Robots.txt
+- **Company-first layout** — ExcellenceLinks showcased as the primary brand, followed by founder profile & executive leadership
 - **AI Chatbot** — Powered by Google Gemini, answers questions about services and expertise
 - **Contact Form** — Sends emails directly via SMTP (nodemailer)
 - **WhatsApp Integration** — Floating button with direct chat to +92 324 427 9017

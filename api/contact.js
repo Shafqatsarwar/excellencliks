@@ -23,14 +23,14 @@ module.exports = async (req, res) => {
     });
 
     const mailOptions = {
-      from: `"${name}" <${process.env.SMTP_USER}>`,
-      to: 'khansarwar1@hotmail.com',
+      from: `"${name}" <${process.env.EMAIL_FROM || process.env.SMTP_USER}>`,
+      to: process.env.NEXT_PUBLIC_EMAIL || 'excellencelinks@hotmail.com',
       replyTo: email,
-      subject: `Portfolio Contact: ${subject || 'New Message'} from ${name}`,
+      subject: `ExcellenceLinks Inquiry: ${subject || 'New Message'} from ${name}`,
       html: `
         <div style="font-family:Arial,sans-serif;max-width:600px;margin:0 auto;padding:20px;background:#0e1320;color:#e8eaf0;border-radius:12px;border:1px solid rgba(212,175,55,0.2);">
           <div style="text-align:center;margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid rgba(212,175,55,0.15);">
-            <h2 style="color:#D4AF37;margin:0;">📬 New Portfolio Message</h2>
+            <h2 style="color:#D4AF37;margin:0;">📬 New ExcellenceLinks Inquiry</h2>
           </div>
           <table style="width:100%;border-collapse:collapse;">
             <tr><td style="padding:8px 0;color:#8b93a7;font-size:12px;text-transform:uppercase;letter-spacing:1px;">Name</td></tr>

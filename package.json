@@ -1,7 +1,7 @@
 {
   "name": "excellencelinks",
   "version": "1.0.0",
-  "description": "Shafqat Sarwar — Agentic AI Developer Portfolio",
+  "description": "ExcellenceLinks — Agentic AI Employees, Multi-Agent Systems & Enterprise Workflow Automation",
   "scripts": {
     "dev": "vercel dev",
     "build": "echo static"
