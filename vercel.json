@@ -2,12 +2,6 @@
   "version": 2,
   "headers": [
     {
-      "source": "/(.*)sitemap(.*)",
-      "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
-      ]
-    },
-    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },
@@ -18,15 +12,14 @@
     }
   ],
   "routes": [
+    { "src": "/sitemap.xml", "dest": "/api/sitemap" },
+    { "src": "/sitemap", "dest": "/api/sitemap" },
+    { "src": "/sitemap.xml/", "dest": "/api/sitemap" },
+    { "src": "/public/sitemap.xml", "dest": "/api/sitemap" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/favicon.ico", "dest": "/public/excellence-logo.webp" },
     { "src": "/site.webmanifest", "dest": "/public/site.webmanifest" },
-    { "src": "/sitemap.xsl", "dest": "/public/sitemap.xsl" },
-    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
-    { "src": "/sitemap", "dest": "/sitemap.xml" },
-    { "src": "/sitemap.xml/", "dest": "/sitemap.xml" },
-    { "src": "/public/sitemap.xml", "dest": "/sitemap.xml" },
-    { "src": "/robots.txt", "dest": "/robots.txt" },
+    { "src": "/robots.txt", "dest": "/public/robots.txt" },
     { "src": "/public/(.*)", "dest": "/public/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
