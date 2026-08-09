@@ -21,6 +21,7 @@
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/favicon.ico", "dest": "/public/excellence-logo.webp" },
     { "src": "/site.webmanifest", "dest": "/public/site.webmanifest" },
+    { "src": "/sitemap.xsl", "dest": "/public/sitemap.xsl" },
     { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
     { "src": "/sitemap", "dest": "/sitemap.xml" },
     { "src": "/sitemap.xml/", "dest": "/sitemap.xml" },
