@@ -36,3 +36,6 @@ desktop.ini
 scratch/
 tmp/
 *.tmp
+
+.vercel
+.env*.local
