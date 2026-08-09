@@ -15,8 +15,8 @@
     { "src": "/api/(.*)", "dest": "/api/$1" },
     { "src": "/favicon.ico", "dest": "/public/excellence-logo.webp" },
     { "src": "/site.webmanifest", "dest": "/public/site.webmanifest" },
-    { "src": "/sitemap.xml", "dest": "/public/sitemap.xml" },
-    { "src": "/robots.txt", "dest": "/public/robots.txt" },
+    { "src": "/(.*)sitemap.xml", "dest": "/public/sitemap.xml" },
+    { "src": "/(.*)robots.txt", "dest": "/public/robots.txt" },
     { "src": "/public/(.*)", "dest": "/public/$1" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
