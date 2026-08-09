@@ -29,13 +29,7 @@
     { "src": "/sitemap.xml", "dest": "/api/sitemap" },
     { "src": "/sitemap", "dest": "/api/sitemap" },
     { "src": "/sitemap.xml/", "dest": "/api/sitemap" },
-    { "src": "/public/sitemap.xml", "dest": "/api/sitemap" },
-    { "src": "/llms.txt", "dest": "/public/llms.txt" },
     { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/favicon.ico", "dest": "/public/excellence-logo.webp" },
-    { "src": "/site.webmanifest", "dest": "/public/site.webmanifest" },
-    { "src": "/robots.txt", "dest": "/public/robots.txt" },
-    { "src": "/public/(.*)", "dest": "/$1" },
     { "handle": "filesystem" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
