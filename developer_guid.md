@@ -127,14 +127,19 @@ To update system knowledge or link behavior in the chatbot:
 
 ## 5. Enterprise SEO & Indexing Maintenance
 
-1. **Google Search Console**:
-   - Inspect `https://excellencelinks.com/` and submit `https://excellencelinks.com/sitemap.xml`.
-2. **Schema.org JSON-LD Verification**:
+1. **Google Search Console Site Verification**:
+   - Verification Meta Tag: `<meta name="google-site-verification" content="4wIaVCtk-BdkEwEDohKXKHhY3U2I0ZC8GqiG5r0wtH4">`
+   - Primary Verified Domain: `https://excellencelinks.vercel.app/`
+   - XML Sitemap Location: `https://excellencelinks.vercel.app/sitemap.xml`
+   - Environment Variable: `GOOGLE_SITE_VERIFICATION="4wIaVCtk-BdkEwEDohKXKHhY3U2I0ZC8GqiG5r0wtH4"`
+
+2. **Google Rich Results & Schema.org**:
    - Verify structured data with [Google Rich Results Test](https://search.google.com/test/rich-results).
    - Validated schemas: `Organization`, `WebSite`, `Service` (AI Employees & Enterprise SEO), `FAQPage`.
+
 3. **Crawl Budget Safeguard**:
-   - Keep images in `/public` directory.
-   - Do not re-introduce duplicated banner or hero photo tags in body content.
+   - Keep images in `/public` directory in WebP format.
+   - Serve static assets via Vercel edge CDN.
 
 ---
 
